@@ -1,2 +1,45 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+$shopping-mobile: 400px; 
+$shopping-desktop: 900px;
+$orange: hsl(26, 100%, 55%);
+$pale-orange: hsl(25, 100%, 94%);
+$dark-blue: hsl(220, 13%, 13%);
+$dark-gray-blue: hsl(219, 9%, 45%);
+$gray-blue: hsl(220, 14%, 75%);
+$light-gray-blue: hsl(223, 64%, 98%);
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);  //(with 75% opacity for lightbox background)
+$shopping-font: 'Kumbh Sans', sans-serif;
+
+
+.shopping-nav {
+  margin-right: 10em;
+  margin-left: 10em;
+  border-bottom: 2px solid $light-gray-blue;
+}
+
+.header-link {
+  font-family: $shopping-font;
+  font-weight: 600;
+  color: $dark-gray-blue;
+  margin-right: 2em;
+  border-bottom: 3px solid transparent;
+  &:hover, &:focus, &:active{
+    border-bottom: 3px solid $orange;
+    color: $black;
+  }
+}
+.avatar-holder {
+  width: 40%;
+}
+.cart {
+  position: relative;
+  right: -3em;
+}
+.avatar {
+  object-fit: cover;
+  width: 100%;
+}
 

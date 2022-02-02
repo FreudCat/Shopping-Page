@@ -8,35 +8,50 @@
 </head>
 <body>
   <header>
+    <div class="container-fluid shopping-nav-container px-0">
+      <nav class="navbar navbar-expand-lg navbar-light shopping-nav pt-3 pb-0">
+        <div class="d-inline-flex">
+          <button class="navbar-toggler shopping-nav-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#shoppingSupportedContent" aria-controls="shoppingSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <img src="../assets/images/icon-menu.svg">
+          </button>
+          <a class="navbar-brand pe-4 mt-3" href="#"><img src="../assets/images/logo.svg"></a>
+          <div class="collapse navbar-collapse mt-3">
+              <a class = "nav-link header-link px-0 pb-5" href="#">Collections</a>
+              <a class = "nav-link header-link px-0 pb-5" href="#">Men</a>
+              <a class = "nav-link header-link px-0 pb-5" href="#">Women</a>
+              <a class = "nav-link header-link px-0 pb-5" href="#">About</a>
+              <a class = "nav-link header-link px-0 pb-5" href="#">Contact</a>
 
-    <navbar> <!--Collapsible, should span entire width doesn't need to be in container fluid(?), no padding needed'-->
-      <toggle> <!--This toggle should open an offcanvas sidebar (see bootstrap offcanvas - toggle should not be present in desktop view)-->
-        <offcanvas>
-          <links> <!--Font color black, bold, use font family from design files-->
-          </links>
-        </offcanvas>
-      </toggle>
-      <logo></logo> <!--logo from the design files-->
-      <navlinks>
-        <links> <!--Should only be present in non-mobile view--> 
-          <!--On HOVER/ACTIVE - text should go from grey to black with orange bottom border-->
-        </links> 
-      </navlinks>
-      <cart>
-        <logo></logo> <!--Cart logo from design files; be sure to also include the little bubble w/ cart items in the initial spacing -> addition of bubble should NOT move the cart; on ACTIVE should turn from grey to black-->
-        <item-in-cart></item-in-cart> <!--Should be white text in orage bubble. Associated with a button and JS that adds the item -->
-        <cart-modal> 
-          <empty></empty> <!-- empty modal-->
-          <hasItems>
-            <row></row> <!--has image of shoe, number of shoes and price, and then total price, has trash can icon-->
-          </hasItems>
-        </cart-modal>
-      </cart>
-      <avatar>
-        <a><img></a> <!--On ACTIVE should have an orange border - it should NOT change the shape of the image-->
-      </avatar>
-    </navbar>
+          </div>
+        </div>
+        <div class="d-inline-flex ms-auto">
+            <button type="button" class="btn cart p-0"><img src="../assets/images/icon-cart.svg"></button>
+      
+            <div class="avatar-holder ms-auto">
+              <img class="avatar" src="../assets/images/image-avatar.png">
+            </div>
+          </div>
+    </nav> 
+  </div>
 
+<!-------------------------------Offcanvas sidenav-------------------------------------------->
+    <div class="offcanvas shopping offcanvas-start" tabindex="-1" id="shoppingSupportedContent" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"><img src="../assets/images/icon-close.svg"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class='navbar-nav flex-nowrap shopping-unordered-list'>
+      <!-- These are expanded on the left in desktop view-->
+          <li class='nav-item'><a class = "nav-link offcanvas-link" href="#">Collections</a></li> <!--greyish text - class="shopping-header-items", class="shopping-header-links"-->
+          <li class='nav-item'><a class = "nav-link offcanvas-link" href="#">Men</a></li><!--on hover and active - border bottom is orange and thick, text becomes black-->
+          <li class='nav-item'><a class = "nav-link offcanvas-link" href="#">Women</a></li>
+          <li class='nav-item'><a class = "nav-link offcanvas-link" href="#">About</a></li>
+          <li class='nav-item'><a class = "nav-link offcanvas-link" href="#">Contact</a></li>
+        <!-- These are in a column in a sidebar in mobile view -->
+        <!-- These are on the right and remain in both views-->
+        </ul>
+      </div>
+    </div>
   </header>
   <main>
 
@@ -44,3 +59,32 @@
 <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 </body>
 </html>
+
+
+<navbar> <!--Collapsible, should span entire width doesn't need to be in container fluid(?), no padding needed'-->
+  <toggle> <!--This toggle should open an offcanvas sidebar (see bootstrap offcanvas - toggle should not be present in desktop view)-->
+    <offcanvas>
+      <links> <!--Font color black, bold, use font family from design files-->
+      </links>
+    </offcanvas>
+  </toggle>
+  <logo></logo> <!--logo from the design files-->
+  <navlinks>
+    <links> <!--Should only be present in non-mobile view--> 
+      <!--On HOVER/ACTIVE - text should go from grey to black with orange bottom border-->
+    </links> 
+  </navlinks>
+  <cart>
+    <logo></logo> <!--Cart logo from design files; be sure to also include the little bubble w/ cart items in the initial spacing -> addition of bubble should NOT move the cart; on ACTIVE should turn from grey to black-->
+    <item-in-cart></item-in-cart> <!--Should be white text in orage bubble. Associated with a button and JS that adds the item -->
+    <cart-modal> 
+      <empty></empty> <!-- empty modal-->
+      <hasItems>
+        <row></row> <!--has image of shoe, number of shoes and price, and then total price, has trash can icon-->
+      </hasItems>
+    </cart-modal>
+  </cart>
+  <avatar>
+    <a><img></a> <!--On ACTIVE should have an orange border - it should NOT change the shape of the image-->
+  </avatar>
+</navbar>
