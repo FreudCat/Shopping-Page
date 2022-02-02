@@ -1,15 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>ECommerge Shopping Page</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../assets/css/custom.css";>
-  </head>
-  <body>
-    <div class="container-fluid p-5 bg-primary text-white text-center">
-      <h1>My First Bootstrap Page</h1>
-      <p>Resize this responsive page to see the effect!</p>
-    </div>
-  </body>
+<head>
+  <title>ECommerge Shopping Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../assets/css/custom.css";>
+</head>
+<body>
+  <header>
+
+    <navbar> <!--Collapsible, should span entire width doesn't need to be in container fluid(?), no padding needed'-->
+      <toggle> <!--This toggle should open an offcanvas sidebar (see bootstrap offcanvas - toggle should not be present in desktop view)-->
+        <offcanvas>
+          <links> <!--Font color black, bold, use font family from design files-->
+          </links>
+        </offcanvas>
+      </toggle>
+      <logo></logo> <!--logo from the design files-->
+      <navlinks>
+        <links> <!--Should only be present in non-mobile view--> 
+          <!--On HOVER/ACTIVE - text should go from grey to black with orange bottom border-->
+        </links> 
+      </navlinks>
+      <cart>
+        <logo></logo> <!--Cart logo from design files; be sure to also include the little bubble w/ cart items in the initial spacing -> addition of bubble should NOT move the cart; on ACTIVE should turn from grey to black-->
+        <item-in-cart></item-in-cart> <!--Should be white text in orage bubble. Associated with a button and JS that adds the item -->
+        <cart-modal> 
+          <empty></empty> <!-- empty modal-->
+          <hasItems>
+            <row></row> <!--has image of shoe, number of shoes and price, and then total price, has trash can icon-->
+          </hasItems>
+        </cart-modal>
+      </cart>
+      <avatar>
+        <a><img></a> <!--On ACTIVE should have an orange border - it should NOT change the shape of the image-->
+      </avatar>
+    </navbar>
+
+  </header>
+  <main>
+
+  </main>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
 </html>
