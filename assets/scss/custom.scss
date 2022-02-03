@@ -171,7 +171,10 @@ $shopping-font: 'Kumbh Sans', sans-serif;
 }
 
 .information-row {
+  @media only screen and (min-width: $shopping-desktop) {
   margin-top: 10em;
+  }
+  margin-top: 1.5em;
   .title {
     font-family: $shopping-font;
     color: $orange;
@@ -227,6 +230,11 @@ $shopping-font: 'Kumbh Sans', sans-serif;
   background-color: $light-gray-blue;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+  &:active {
+    .minus-sign {
+      opacity: 0.5;
+    }
+  }
   .minus-sign {
     padding-bottom: 0.3em;
   }
@@ -236,6 +244,11 @@ $shopping-font: 'Kumbh Sans', sans-serif;
   background-color: $light-gray-blue;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+  &:active {
+    .plus-sign {
+      opacity: 0.5;
+    }
+  }
   .plus-sign {
     padding-bottom: 0.3em;
   }
@@ -261,11 +274,22 @@ $shopping-font: 'Kumbh Sans', sans-serif;
   padding-top: 0.8em;
   padding-bottom: 0.8em;
   border-radius: 10px;
-  
+  &:hover {
+    color: $white;
+  }
+  &:active {
+    opacity: 0.5;
+    color: $white;
+  } 
 }
 
-.cart-logo-button {
-  width: 13%;
+.add-cart-div {
+  @media only screen and (max-width: $shopping-desktop) {
+  margin-bottom: 6em;
+  }
+.add-cart-button {
+  box-shadow: 0 30px 50px -20px $orange;
+}
 }
 
 

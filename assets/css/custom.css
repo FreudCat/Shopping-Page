@@ -7940,7 +7940,10 @@ textarea.form-control-lg {
       opacity: 0.3; }
 
 .information-row {
-  margin-top: 10em; }
+  margin-top: 1.5em; }
+  @media only screen and (min-width: 900px) {
+    .information-row {
+      margin-top: 10em; } }
   .information-row .title {
     font-family: "Kumbh Sans", sans-serif;
     color: #ff7d1a;
@@ -7989,6 +7992,8 @@ textarea.form-control-lg {
   background-color: #f7f8fd;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px; }
+  .minus:active .minus-sign {
+    opacity: 0.5; }
   .minus .minus-sign {
     padding-bottom: 0.3em; }
 
@@ -7996,6 +8001,8 @@ textarea.form-control-lg {
   background-color: #f7f8fd;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px; }
+  .plus:active .plus-sign {
+    opacity: 0.5; }
   .plus .plus-sign {
     padding-bottom: 0.3em; }
 
@@ -8016,6 +8023,15 @@ textarea.form-control-lg {
   padding-top: 0.8em;
   padding-bottom: 0.8em;
   border-radius: 10px; }
+  .add-cart-button:hover {
+    color: white; }
+  .add-cart-button:active {
+    opacity: 0.5;
+    color: white; }
 
-.cart-logo-button {
-  width: 13%; }
+@media only screen and (max-width: 900px) {
+  .add-cart-div {
+    margin-bottom: 6em; } }
+
+.add-cart-div .add-cart-button {
+  box-shadow: 0 30px 50px -20px #ff7d1a; }
