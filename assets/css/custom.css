@@ -7907,3 +7907,26 @@ textarea.form-control-lg {
     font-family: "Kumbh Sans", sans-serif;
     font-weight: 600;
     color: white; }
+
+.left-col, .right-col {
+  border: 1px solid black; }
+
+.main-image-row {
+  margin-top: 5em; }
+
+.main-image-div .main-image {
+  border-radius: 15px; }
+
+.thumbnail-row {
+  margin-top: 2em;
+  margin-bottom: 8em; }
+
+.thumbnail-shoe-div {
+  width: 15%;
+  border-radius: 13px;
+  border: 2px solid transparent; }
+  .thumbnail-shoe-div .thumbnail-shoe {
+    width: 100%;
+    border-radius: 10px; }
+    .thumbnail-shoe-div .thumbnail-shoe:hover, .thumbnail-shoe-div .thumbnail-shoe:focus, .thumbnail-shoe-div .thumbnail-shoe:active {
+      opacity: 0.3; }

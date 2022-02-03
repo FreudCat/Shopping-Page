@@ -39,7 +39,7 @@ $shopping-font: 'Kumbh Sans', sans-serif;
   color: $dark-gray-blue;
   margin-right: 2em;
   border-bottom: 3px solid transparent;
-  &:hover, &:focus, &:active{
+  &:hover, &:focus, &:active {
     border-bottom: 3px solid $orange;
     color: $black;
   }
@@ -129,7 +129,38 @@ $shopping-font: 'Kumbh Sans', sans-serif;
     color: $white;
   }
 }
-  
+
+.left-col, .right-col {
+  border: 1px solid black;
+}
+
+.main-image-row {
+  margin-top: 5em;
+}
+.main-image-div {
+  .main-image {
+    border-radius: 15px;
+  }
+}
+
+.thumbnail-row {
+  margin-top: 2em;
+  margin-bottom: 8em;
+}
+
+.thumbnail-shoe-div {
+  width: 15%;
+  border-radius: 13px;
+  border: 2px solid transparent;
+  .thumbnail-shoe {
+    width: 100%;
+    border-radius: 10px;
+    &:hover, &:focus, &:active {
+      opacity: 0.3;
+    }
+  }
+}
+
 
 
 
