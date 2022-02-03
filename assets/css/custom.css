@@ -7911,11 +7911,19 @@ textarea.form-control-lg {
 .left-col, .right-col {
   border: 1px solid black; }
 
-.main-image-row {
-  margin-top: 5em; }
+@media only screen and (min-width: 900px) {
+  .main-image-row {
+    margin-top: 5em; } }
 
-.main-image-div .main-image {
-  border-radius: 15px; }
+@media only screen and (min-width: 900px) {
+  .main-image-div .main-image {
+    border-radius: 15px; } }
+
+@media only screen and (max-width: 900px) {
+  .main-image-div .main-image {
+    width: 100%;
+    height: 19em;
+    object-fit: cover; } }
 
 .thumbnail-row {
   margin-top: 2em;
@@ -7930,3 +7938,31 @@ textarea.form-control-lg {
     border-radius: 10px; }
     .thumbnail-shoe-div .thumbnail-shoe:hover, .thumbnail-shoe-div .thumbnail-shoe:focus, .thumbnail-shoe-div .thumbnail-shoe:active {
       opacity: 0.3; }
+
+.information-row {
+  margin-top: 10em; }
+  .information-row .title {
+    font-family: "Kumbh Sans", sans-serif;
+    color: #ff7d1a;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: 800;
+    letter-spacing: 0.2em; }
+  .information-row .shoe-name {
+    margin-top: 0.4em;
+    font-family: "Kumbh Sans", sans-serif;
+    color: black;
+    font-size: 2.5em;
+    font-weight: 700; }
+  .information-row .description {
+    margin-top: 2.2em;
+    font-family: "Kumbh Sans", sans-serif;
+    color: #68707d;
+    font-size: 0.9em;
+    font-weight: 600; }
+
+.current-price {
+  font-family: "Kumbh Sans", sans-serif;
+  color: black;
+  font-size: 1.3em;
+  font-weight: 700; }

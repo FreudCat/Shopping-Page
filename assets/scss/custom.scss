@@ -135,11 +135,20 @@ $shopping-font: 'Kumbh Sans', sans-serif;
 }
 
 .main-image-row {
-  margin-top: 5em;
+  @media only screen and (min-width: $shopping-desktop) {
+    margin-top: 5em;
+  }
 }
 .main-image-div {
   .main-image {
-    border-radius: 15px;
+    @media only screen and (min-width: $shopping-desktop) {
+      border-radius: 15px;
+    }
+    @media only screen and (max-width: $shopping-desktop) {
+      width: 100%;
+      height: 19em;
+      object-fit: cover;
+    }
   }
 }
 
@@ -159,6 +168,39 @@ $shopping-font: 'Kumbh Sans', sans-serif;
       opacity: 0.3;
     }
   }
+}
+
+.information-row {
+  margin-top: 10em;
+  .title {
+    font-family: $shopping-font;
+    color: $orange;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+  }
+  .shoe-name {
+    margin-top: 0.4em;
+    font-family: $shopping-font;
+    color: $black;
+    font-size: 2.5em;
+    font-weight: 700;
+  }
+  .description {
+    margin-top: 2.2em;
+    font-family: $shopping-font;
+    color: $dark-gray-blue;
+    font-size: 0.9em;
+    font-weight: 600;
+  }
+}
+
+.current-price {
+  font-family: $shopping-font;
+  color: $black;
+  font-size: 1.3em;
+  font-weight: 700;
 }
 
 
