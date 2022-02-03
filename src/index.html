@@ -9,12 +9,12 @@
 <body>
   <header>
     <div class="container-fluid shopping-nav-container px-0">
-      <nav class="navbar navbar-expand-lg navbar-light shopping-nav pt-3 pb-0">
+      <nav class="navbar navbar-expand-lg navbar-light shopping-nav pt-0 pt-md-3 pb-0">
         <div class="d-inline-flex">
-          <button class="navbar-toggler shopping-nav-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#shoppingSupportedContent" aria-controls="shoppingSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler shopping-nav-toggle ms-3 me-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#shoppingSupportedContent" aria-controls="shoppingSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <img src="../assets/images/icon-menu.svg">
           </button>
-          <a class="navbar-brand pe-4 mt-3" href="#"><img src="../assets/images/logo.svg"></a>
+          <a class="navbar-brand shopping-logo pe-md-5 my-0 mt-md-3" href="#"><img src="../assets/images/logo.svg"></a>
           <div class="collapse navbar-collapse mt-3">
               <a class = "nav-link header-link px-0 pb-5" href="#">Collections</a>
               <a class = "nav-link header-link px-0 pb-5" href="#">Men</a>
@@ -25,9 +25,11 @@
           </div>
         </div>
         <div class="d-inline-flex ms-auto">
-            <button type="button" class="btn cart p-0"><img src="../assets/images/icon-cart.svg"></button>
+          <div>
+            <button type="button" class="btn cart p-0"><span class="cart-amount-holder d-flex align-items-center justify-content-center">0</span><img src="../assets/images/icon-cart.svg"></button>
+          </div>
       
-            <div class="avatar-holder ms-auto">
+            <div class="avatar-holder ms-auto mt-3 mt-md-0 mb-4 me-4 me-md-0 mb-md-3">
               <img class="avatar" src="../assets/images/image-avatar.png">
             </div>
           </div>
