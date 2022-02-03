@@ -7908,9 +7908,6 @@ textarea.form-control-lg {
     font-weight: 600;
     color: white; }
 
-.left-col, .right-col {
-  border: 1px solid black; }
-
 @media only screen and (min-width: 900px) {
   .main-image-row {
     margin-top: 5em; } }
@@ -7992,23 +7989,28 @@ textarea.form-control-lg {
   background-color: #f7f8fd;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px; }
+  .minus .minus-box {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em; }
   .minus:active .minus-sign {
     opacity: 0.5; }
-  .minus .minus-sign {
-    padding-bottom: 0.3em; }
 
 .plus {
   background-color: #f7f8fd;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px; }
+  .plus .plus-box {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em; }
   .plus:active .plus-sign {
     opacity: 0.5; }
-  .plus .plus-sign {
-    padding-bottom: 0.3em; }
 
 .amount {
   width: 2.1em;
   background-color: #f7f8fd; }
+  .amount .number-box {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em; }
   .amount .number-holder {
     padding: 0;
     margin: 0;

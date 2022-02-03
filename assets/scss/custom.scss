@@ -130,10 +130,6 @@ $shopping-font: 'Kumbh Sans', sans-serif;
   }
 }
 
-.left-col, .right-col {
-  border: 1px solid black;
-}
-
 .main-image-row {
   @media only screen and (min-width: $shopping-desktop) {
     margin-top: 5em;
@@ -230,13 +226,17 @@ $shopping-font: 'Kumbh Sans', sans-serif;
   background-color: $light-gray-blue;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+  .minus-box {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
   &:active {
     .minus-sign {
       opacity: 0.5;
     }
   }
   .minus-sign {
-    padding-bottom: 0.3em;
+
   }
 }
 
@@ -244,13 +244,17 @@ $shopping-font: 'Kumbh Sans', sans-serif;
   background-color: $light-gray-blue;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+  .plus-box {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
   &:active {
     .plus-sign {
       opacity: 0.5;
     }
   }
   .plus-sign {
-    padding-bottom: 0.3em;
+
   }
 }
 
@@ -258,6 +262,10 @@ $shopping-font: 'Kumbh Sans', sans-serif;
 .amount {
   width: 2.1em;
   background-color: $light-gray-blue;
+  .number-box {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
   .number-holder {
     padding: 0; 
     margin: 0;
