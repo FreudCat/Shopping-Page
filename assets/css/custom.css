@@ -7955,14 +7955,67 @@ textarea.form-control-lg {
     font-size: 2.5em;
     font-weight: 700; }
   .information-row .description {
-    margin-top: 2.2em;
+    margin-top: 2.5em;
     font-family: "Kumbh Sans", sans-serif;
     color: #68707d;
     font-size: 0.9em;
-    font-weight: 600; }
+    font-weight: 500;
+    line-height: 1.8em; }
 
 .current-price {
   font-family: "Kumbh Sans", sans-serif;
   color: black;
-  font-size: 1.3em;
+  font-size: 1.7em;
+  font-weight: 700;
+  margin-bottom: 0.2em; }
+
+.sale-tag {
+  background-color: #ffede0;
+  color: #ff7d1a;
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  border-radius: 5px;
+  margin-bottom: 0; }
+
+.previous-price {
+  font-family: "Kumbh Sans", sans-serif;
+  color: #b6bcc8;
+  font-size: 0.9em;
+  text-decoration: line-through;
   font-weight: 700; }
+
+.minus {
+  background-color: #f7f8fd;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px; }
+  .minus .minus-sign {
+    padding-bottom: 0.3em; }
+
+.plus {
+  background-color: #f7f8fd;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px; }
+  .plus .plus-sign {
+    padding-bottom: 0.3em; }
+
+.amount {
+  width: 2.1em;
+  background-color: #f7f8fd; }
+  .amount .number-holder {
+    padding: 0;
+    margin: 0;
+    font-family: "Kumbh Sans", sans-serif;
+    font-weight: 800; }
+
+.add-cart-button {
+  background-color: #ff7d1a;
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: 600;
+  color: white;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  border-radius: 10px; }
+
+.cart-logo-button {
+  width: 13%; }

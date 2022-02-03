@@ -188,21 +188,85 @@ $shopping-font: 'Kumbh Sans', sans-serif;
     font-weight: 700;
   }
   .description {
-    margin-top: 2.2em;
+    margin-top: 2.5em;
     font-family: $shopping-font;
     color: $dark-gray-blue;
     font-size: 0.9em;
-    font-weight: 600;
+    font-weight: 500;
+    line-height: 1.8em;
   }
 }
 
 .current-price {
   font-family: $shopping-font;
   color: $black;
-  font-size: 1.3em;
+  font-size: 1.7em;
+  font-weight: 700;
+  margin-bottom: 0.2em;
+}
+
+.sale-tag {
+  background-color: $pale-orange;
+  color: $orange;
+  font-family: $shopping-font;
+  font-size: 1em;
+  font-weight: 700;
+  border-radius: 5px;
+  margin-bottom: 0;
+}
+
+.previous-price {
+  font-family: $shopping-font;
+  color: $gray-blue;
+  font-size: 0.9em;
+  text-decoration: line-through;
   font-weight: 700;
 }
 
+.minus {
+  background-color: $light-gray-blue;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  .minus-sign {
+    padding-bottom: 0.3em;
+  }
+}
+
+.plus {
+  background-color: $light-gray-blue;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  .plus-sign {
+    padding-bottom: 0.3em;
+  }
+}
+
+
+.amount {
+  width: 2.1em;
+  background-color: $light-gray-blue;
+  .number-holder {
+    padding: 0; 
+    margin: 0;
+    font-family: $shopping-font;
+    font-weight: 800;
+  }  
+}
+
+.add-cart-button {
+  background-color: $orange;
+  font-family: $shopping-font;
+  font-weight: 600;
+  color: $white;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  border-radius: 10px;
+  
+}
+
+.cart-logo-button {
+  width: 13%;
+}
 
 
 
