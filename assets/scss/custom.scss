@@ -29,8 +29,8 @@ $shopping-font: 'Kumbh Sans', sans-serif;
   .shopping-logo {
     @media only screen and (max-width: $shopping-desktop) {
       padding-bottom: 0.4em;
+    }
   }
-}
 }
 
 .header-link {
@@ -44,6 +44,7 @@ $shopping-font: 'Kumbh Sans', sans-serif;
     color: $black;
   }
 }
+
 .avatar-holder {
   position: relative;
   width: 40%;
@@ -70,6 +71,7 @@ $shopping-font: 'Kumbh Sans', sans-serif;
     width: 100%;
   }
 }
+
 .cart {
   position: relative;
   top: 0.5em;
@@ -96,6 +98,38 @@ $shopping-font: 'Kumbh Sans', sans-serif;
     fill: #000000;
   }
 }
+
+.offcanvas.shopping {
+  width: 66%;
+  box-shadow: 8px 10px 10px rgba(0, 0, 0, 0.2); 
+  .offcanvas-link {
+    font-family: $shopping-font;
+    font-size: 1.2em;
+    font-weight: 800;
+    margin-bottom: 0.5em;
+    color: $black;
+  }
+}
+.offcanvas-backdrop.show {
+  opacity: 0.7;
+}
+
+.dropdown-menu {
+  border-radius: 10px;
+  box-shadow: 0px 1px 1px rgba(230, 230, 230, 0.9), 
+        -10px 4px 10px rgba(230, 230, 230, 0.9), 10px 8px 15px rgba(230, 230, 230, 0.9);
+  border: none;
+  width: 20em;
+  text-align: center;
+  transform: translate(-45%, 0);
+  .checkout-button {
+    background-color: $orange;
+    font-family: $shopping-font;
+    font-weight: 600;
+    color: $white;
+  }
+}
+  
 
 
 

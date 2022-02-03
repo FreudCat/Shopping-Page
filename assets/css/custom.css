@@ -7881,3 +7881,29 @@ textarea.form-control-lg {
     border-radius: 45%; }
   .cart .svg-cart:hover {
     fill: #000000; }
+
+.offcanvas.shopping {
+  width: 66%;
+  box-shadow: 8px 10px 10px rgba(0, 0, 0, 0.2); }
+  .offcanvas.shopping .offcanvas-link {
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 1.2em;
+    font-weight: 800;
+    margin-bottom: 0.5em;
+    color: black; }
+
+.offcanvas-backdrop.show {
+  opacity: 0.7; }
+
+.dropdown-menu {
+  border-radius: 10px;
+  box-shadow: 0px 1px 1px rgba(230, 230, 230, 0.9), -10px 4px 10px rgba(230, 230, 230, 0.9), 10px 8px 15px rgba(230, 230, 230, 0.9);
+  border: none;
+  width: 20em;
+  text-align: center;
+  transform: translate(-45%, 0); }
+  .dropdown-menu .checkout-button {
+    background-color: #ff7d1a;
+    font-family: "Kumbh Sans", sans-serif;
+    font-weight: 600;
+    color: white; }

@@ -27,17 +27,17 @@
         <div class="d-inline-flex ms-auto">
           <div class="dropdown">
             <button type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-cart" class="btn cart p-0"><span class="cart-amount-holder d-flex align-items-center justify-content-center">0</span><svg width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path class="svg-cart" d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="#69707D" fill-rule="nonzero"/></svg></button>
-            <div class="dropdown-menu" aria-labelledby="dropdown-cart">
+            <div class="container dropdown-menu" aria-labelledby="dropdown-cart">
               <div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <p class="modal-title">Cart</p>
               </div>
               <div class="modal-body">
                 <p>Modal body text goes here.</p>
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+              <div class="row">
+                <div class="col">
+                  <button type="button" class="btn checkout-button w-100" data-bs-dismiss="modal">Checkout</button>
+                </div>
               </div>
             </div>
           </div>
@@ -52,18 +52,15 @@
 <!-------------------------------Offcanvas sidenav-------------------------------------------->
     <div class="offcanvas shopping offcanvas-start" tabindex="-1" id="shoppingSupportedContent" aria-labelledby="offcanvasExampleLabel">
       <div class="offcanvas-header">
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"><img src="../assets/images/icon-close.svg"></button>
+        <button type="button" class="btn ps-2 text-reset" data-bs-dismiss="offcanvas" aria-label="Close"><img src="../assets/images/icon-close.svg"></button>
       </div>
       <div class="offcanvas-body">
-        <ul class='navbar-nav flex-nowrap shopping-unordered-list'>
-      <!-- These are expanded on the left in desktop view-->
-          <li class='nav-item'><a class = "nav-link offcanvas-link" href="#">Collections</a></li> <!--greyish text - class="shopping-header-items", class="shopping-header-links"-->
-          <li class='nav-item'><a class = "nav-link offcanvas-link" href="#">Men</a></li><!--on hover and active - border bottom is orange and thick, text becomes black-->
+        <ul class='navbar-nav flex-nowrap shopping-unordered-list ms-2'>
+          <li class='nav-item'><a class = "nav-link offcanvas-link" href="#">Collections</a></li> 
+          <li class='nav-item'><a class = "nav-link offcanvas-link" href="#">Men</a></li>
           <li class='nav-item'><a class = "nav-link offcanvas-link" href="#">Women</a></li>
           <li class='nav-item'><a class = "nav-link offcanvas-link" href="#">About</a></li>
           <li class='nav-item'><a class = "nav-link offcanvas-link" href="#">Contact</a></li>
-        <!-- These are in a column in a sidebar in mobile view -->
-        <!-- These are on the right and remain in both views-->
         </ul>
       </div>
     </div>
