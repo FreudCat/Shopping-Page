@@ -3,6 +3,9 @@ const shoeDivArray = document.querySelectorAll(".thumbnail-shoe-div");
 const shoeArray = document.querySelectorAll(".thumbnail-shoe");
 const mainShoe = document.querySelector(".main-image");
 const largeImageArray = ["../assets/images/image-product-1.jpg", "../assets/images/image-product-2.jpg", "../assets/images/image-product-3.jpg", "../assets/images/image-product-4.jpg"];
+const modalArray= document.querySelectorAll(".modal-thumbnail");
+const modalMain = document.querySelector(".modal-image");
+const modalDiv=document.querySelectorAll(".modal-thumbnail-div");
 
 for (let index=0; index<shoeArray.length; index++) {
   shoeArray[index].addEventListener("click", function() {
@@ -24,10 +27,31 @@ function highlightShoe(activeShoeIndex) {
   }
 }
 
+for (let index=0; index<modalArray.length; index++) {
+  modalArray[index].addEventListener("click", function() {
+    console.log("clicked");
+    highlightShoeInModal(index);
+  })
+}
+
+function highlightShoeInModal(activeShoeModal) {
+  modalMain.src=largeImageArray[activeShoeModal];
+  console.log(activeShoeModal);
+  for (let index=0; index < modalDiv.length; index++) {
+    if (index===activeShoeModal) {
+      modalDiv[index].style.border="2px solid hsl(26, 100%, 55%)";
+      modalArray[index].style.opacity="0.3";
+    } else {
+      modalDiv[index].style.border="2px solid transparent";
+      modalArray[index].style.opacity="1";
+      modalArray[index].removeAttribute("style");
+    }
+  }
+}
+
 
 let currentCartAmount = parseInt(document.querySelector(".cart-amount-holder").innerHTML);
 let amountToAdd = parseInt(document.querySelector(".number-holder").innerHTML);
-
 
 document.querySelector(".minus").addEventListener("click", function() {
   updateNumber(amountToAdd-=1);
@@ -77,5 +101,4 @@ window.addEventListener("resize", function () {
 
 document.querySelector(".main-image").addEventListener("click", function() {
   document.querySelector(".modal-image").src=document.querySelector(".main-image").src;
-
-  })
+})
