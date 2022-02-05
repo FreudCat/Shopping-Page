@@ -41,7 +41,6 @@ const imageArray = [
   }
 ];
 
-
 let index = "";
 document.querySelector(".carousel-control-prev").addEventListener("click", function() {
   if (myModal.classList.contains("show")) {
@@ -209,10 +208,6 @@ for (let modalThumbnail of modalThumbnailArray ) {
   highlightShoe(modalThumbnail);
 })
 }
-
-
-
-
 
 myModal.addEventListener('hidden.bs.modal', function () {
   carouselItem.classList.remove("active");
