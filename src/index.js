@@ -1,7 +1,7 @@
 console.log("index.js ran");
 const mainThumbnailArray = document.querySelectorAll(".thumbnail-shoe");
 const mainShoe = document.querySelector(".main-image");
-const carouselItem = document.querySelectorAll(".carousel-item");
+const carouselItem = document.querySelector(".carousel-item");
 const modalThumbnailArray= document.querySelectorAll(".modal-thumbnail");
 const modalMain = document.querySelector(".modal-image");
 const myModal = document.querySelector("#shoeModal");
@@ -215,13 +215,9 @@ for (let modalThumbnail of modalThumbnailArray ) {
 
 
 myModal.addEventListener('hidden.bs.modal', function () {
-  for (let item of carouselItem) {
-    item.classList.remove("active");
-  }
-  for (let divs of modalDiv) {
-    divs.style.border="2px solid transparent";
-  }
+  carouselItem.classList.remove("active");
   for (let modal of modalThumbnailArray) {
+      modal.parentElement.style.border="2px solid transparent";
       modal.style.opacity="1";
       modal.removeAttribute("style");
   }
