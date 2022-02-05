@@ -8128,5 +8128,8 @@ textarea.form-control-lg {
 .next-svg, .prev-svg {
   overflow: visible; }
 
+.close-svg:hover {
+  fill: #ff7d1a; }
+
 .next-svg {
   margin-left: 0.8em; }

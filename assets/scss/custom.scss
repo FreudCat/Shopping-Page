@@ -404,10 +404,11 @@ $shopping-font: 'Kumbh Sans', sans-serif;
   overflow: visible;
 }
 
-
-// .svg-cart:hover{
-//   fill: #000000;
-// }
+.close-svg {
+  &:hover {
+    fill: $orange;
+  }
+}
 
 .next-svg {
   margin-left: 0.8em;
