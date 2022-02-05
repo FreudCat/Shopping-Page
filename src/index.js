@@ -11,7 +11,7 @@ let tempValue = "";
 let cartAmountHolder = document.querySelector(".cart-amount-holder");
 
 //localStorage.clear();
-
+console.log(localStorage.getItem("stored-amount"));
 const currentPrice = 125.00; 
 document.querySelector(".set-price").innerHTML = currentPrice.toFixed(2);
 const sale = "50%";
@@ -19,8 +19,9 @@ document.querySelector(".sale-tag").innerHTML = sale;
 const previousPrice = `$250.00`; 
 document.querySelector(".previous-price").innerHTML = previousPrice;
 document.querySelector(".modal-body-items").style.display="none";
-console.log(localStorage)
-if (localStorage.length === 0 ) {
+
+
+if (localStorage.length === 0 || (localStorage.getItem("stored-amount") == 0)) {
   tempValue = 0; 
 } else { 
   tempValue = parseInt(localStorage.getItem("stored-amount"));
@@ -69,6 +70,7 @@ function updateNumber(value) {
 
 function updateCart(changeAmount) {
   let newAmount = parseInt(cartAmountHolder.innerHTML) + changeAmount;
+  if (newAmount > 0) {
   localStorage.setItem("stored-amount", newAmount);
   
   cartAmountHolder.style.display="flex";
@@ -77,22 +79,30 @@ function updateCart(changeAmount) {
     cartAmountHolder.innerHTML = newAmount;
     document.querySelector(".multiply-amount").innerHTML= newAmount;
     document.querySelector(".cart-item-total").innerHTML = `$${(newAmount * currentPrice).toFixed(2)}`;
-    console.log("update cart val with new amount and bubble is visible");   
-  
+    console.log("update cart val with new amount and bubble is visible");  
+  } else {
+    localStorage.setItem("stored-amount", 0);
 
-  document.querySelector(".delete-button").addEventListener("click", function() {
-    newAmount-=1;
-    if (newAmount > 0) {
-    document.querySelector(".multiply-amount").innerHTML=newAmount;
-    cartAmountHolder.innerHTML = newAmount;
-    document.querySelector(".cart-item-total").innerHTML = `$${(newAmount * currentPrice).toFixed(2)}`;
-    } else {
-      cartAmountHolder.style.display="none";
-      document.querySelector(".modal-body-empty").style.display = "flex";
-      document.querySelector(".modal-body-items").style.display = "none";
-    }
-  })
+    cartAmountHolder.style.display="none";
+    document.querySelector(".modal-body-empty").style.display = "flex";
+    document.querySelector(".modal-body-items").style.display = "none";
+  }
 } 
+
+document.querySelector(".delete-button").addEventListener("click", function() {
+  updateCart(-1);
+})
+//   newAmount-=1;
+//   if (newAmount > 0) {
+//     localStorage.setItem("stored-amount", newAmount);
+
+//   document.querySelector(".multiply-amount").innerHTML=newAmount;
+//   cartAmountHolder.innerHTML = newAmount;
+//   document.querySelector(".cart-item-total").innerHTML = `$${(newAmount * currentPrice).toFixed(2)}`;
+//   } else {
+    
+//   }
+// })
 
 const imageArray = [
   {
