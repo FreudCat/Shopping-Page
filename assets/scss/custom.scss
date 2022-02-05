@@ -317,8 +317,17 @@ $shopping-font: 'Kumbh Sans', sans-serif;
   }
 }
 
-.carousel-control-prev {
-  
+.carousel-control-next, .carousel-control-prev {
+  position: absolute;
+  height: 2.5em;
+  width: 2.5em;
+  background-color: $white;
+  opacity: 1;
+  border-radius: 50px;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+
 }
 
 .modal-thumbnail-div {
@@ -334,4 +343,10 @@ $shopping-font: 'Kumbh Sans', sans-serif;
   }
 }
 
+.next-svg, .prev-svg {
+  overflow: visible;
+}
 
+.next-svg {
+  margin-left: 0.8em;
+}

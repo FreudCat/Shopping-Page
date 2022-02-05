@@ -8049,6 +8049,17 @@ textarea.form-control-lg {
   .modal-content .modal-thumbnail-row {
     margin-top: 2em; }
 
+.carousel-control-next, .carousel-control-prev {
+  position: absolute;
+  height: 2.5em;
+  width: 2.5em;
+  background-color: white;
+  opacity: 1;
+  border-radius: 50px;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
 .modal-thumbnail-div {
   width: 20%;
   border-radius: 13px;
@@ -8058,3 +8069,9 @@ textarea.form-control-lg {
     border-radius: 10px; }
     .modal-thumbnail-div .modal-thumbnail:hover, .modal-thumbnail-div .modal-thumbnail:focus, .modal-thumbnail-div .modal-thumbnail:active {
       opacity: 0.3; }
+
+.next-svg, .prev-svg {
+  overflow: visible; }
+
+.next-svg {
+  margin-left: 0.8em; }
