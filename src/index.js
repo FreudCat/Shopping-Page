@@ -1,54 +1,137 @@
 console.log("index.js ran");
-const shoeDivArray = document.querySelectorAll(".thumbnail-shoe-div");
-const shoeArray = document.querySelectorAll(".thumbnail-shoe");
+const mainThumbnailArray = document.querySelectorAll(".thumbnail-shoe");
 const mainShoe = document.querySelector(".main-image");
-const largeImageArray = ["../assets/images/image-product-1.jpg", "../assets/images/image-product-2.jpg", "../assets/images/image-product-3.jpg", "../assets/images/image-product-4.jpg"];
-const modalArray= document.querySelectorAll(".modal-thumbnail");
+const carouselItem = document.querySelectorAll(".carousel-item");
+const modalThumbnailArray= document.querySelectorAll(".modal-thumbnail");
 const modalMain = document.querySelector(".modal-image");
-const modalDiv=document.querySelectorAll(".modal-thumbnail-div");
+const myModal = document.querySelector("#shoeModal");
 
-for (let index=0; index<shoeArray.length; index++) {
-  shoeArray[index].addEventListener("click", function() {
-    highlightShoe(index);
-  })
-}
+const imageArray = [
+  {
+    title: "image-product-1",
+    src: "../assets/images/image-product-1.jpg"
+  }, 
+  {
+    title: "image-product-2",
+    src: "../assets/images/image-product-2.jpg"
+  }, 
+  {
+    title: "image-product-3",
+    src: "../assets/images/image-product-3.jpg"
+  }, 
+  {
+    title: "image-product-4",
+    src: "../assets/images/image-product-4.jpg"
+  }, 
+  {
+    title: "image-product-1-thumbnail",
+    src: "../assets/images/image-product-1-thumbnail.jpg"
+  }, 
+  {
+    title: "image-product-2-thumbnail",
+    src: "../assets/images/image-product-2-thumbnail.jpg"
+  }, 
+  {
+    title: "image-product-3-thumbnail",
+    src: "../assets/images/image-product-3-thumbnail.jpg"
+  }, 
+  {
+    title: "image-product-4-thumbnail",
+    src: "../assets/images/image-product-4-thumbnail.jpg"
+  }
+];
 
-function highlightShoe(activeShoeIndex) {
-  mainShoe.src=largeImageArray[activeShoeIndex];
-  for (let index=0; index < shoeDivArray.length; index++) {
-    if (index===activeShoeIndex) {
-      shoeDivArray[index].style.border="2px solid hsl(26, 100%, 55%)";
-      shoeArray[index].style.opacity="0.3";
-    } else {
-      shoeDivArray[index].style.border="2px solid transparent";
-      shoeArray[index].style.opacity="1";
-      shoeArray[index].removeAttribute("style");
+
+let index = "";
+document.querySelector(".carousel-control-prev").addEventListener("click", function() {
+  if (myModal.classList.contains("show")) {
+    currentSlideSrc=modalMain.getAttribute("src");
+  } else {
+    currentSlideSrc=mainShoe.getAttribute("src");
+  }
+  index = imageArray.findIndex( image => image.src === currentSlideSrc); 
+  nextSlide(index-=1);
+})
+
+document.querySelector(".carousel-control-next").addEventListener("click", function() {
+  if (myModal.classList.contains("show")) {
+    currentSlideSrc=modalMain.getAttribute("src");
+  } else {
+    currentSlideSrc=mainShoe.getAttribute("src");
+  }
+  index = imageArray.findIndex( image => image.src === currentSlideSrc); 
+  nextSlide(index+=1);
+})
+
+function nextSlide(newIndex) {
+  let carousel = "";
+  let carouselArray = "";
+  if (myModal.classList.contains("show")) {
+    carousel=modalMain;
+    carouselArray = modalThumbnailArray;
+  } else {
+    carousel=mainShoe;
+    carouselArray=mainThumbnailArray;
+  }
+  if (newIndex < 0) {
+    index=3; 
+  } else if (newIndex > 3) {
+    index = 0; 
+  } else {
+    index = newIndex;
+  }
+  carousel.src = imageArray[index].src;
+  thumbnailSrc = `../assets/images/${imageArray[index].title}-thumbnail.jpg`;
+
+  for (let thumbnail of carouselArray) {
+    thumbnail.parentElement.style.border="2px solid transparent";
+    thumbnail.style.opacity="1";
+    thumbnail.removeAttribute("style");
+    if (thumbnail.getAttribute("src") === thumbnailSrc) {
+      thumbnail.parentElement.style.border = "2px solid hsl(26, 100%, 55%)";
+      thumbnail.style.opacity="0.3";
     }
   }
 }
 
-for (let index=0; index<modalArray.length; index++) {
-  modalArray[index].addEventListener("click", function() {
-    console.log("clicked");
-    highlightShoeInModal(index);
+
+for (let thumbnail of mainThumbnailArray) {
+  thumbnail.addEventListener("click", function() {
+    highlightShoe(thumbnail);
   })
 }
 
-function highlightShoeInModal(activeShoeModal) {
-  modalMain.src=largeImageArray[activeShoeModal];
-  console.log(activeShoeModal);
-  for (let index=0; index < modalDiv.length; index++) {
-    if (index===activeShoeModal) {
-      modalDiv[index].style.border="2px solid hsl(26, 100%, 55%)";
-      modalArray[index].style.opacity="0.3";
-    } else {
-      modalDiv[index].style.border="2px solid transparent";
-      modalArray[index].style.opacity="1";
-      modalArray[index].removeAttribute("style");
-    }
+function highlightShoe(clickedThumbnail) {
+  let highlightedShoe = "";
+  let targetArray = [];
+  if (myModal.classList.contains("show")) {
+    highlightedShoe = modalMain; 
+    targetArray = modalThumbnailArray;
+  } else {
+    targetArray = mainThumbnailArray;
+    highlightedShoe = mainShoe;
   }
-}
 
+  for (let thumbnail of targetArray) {
+    thumbnail.parentElement.style.border="2px solid transparent";
+    thumbnail.style.opacity="1";
+    thumbnail.removeAttribute("style");
+  }
+  let truncatedTitle = "";
+  imageArray.forEach(image => {
+    if (clickedThumbnail.getAttribute("src") === image.src) {
+      truncatedTitle = (image.title).substring(0, 15);
+      console.log(clickedThumbnail.parentElement);
+      clickedThumbnail.parentElement.style.border="2px solid hsl(26, 100%, 55%)";
+      clickedThumbnail.style.opacity="0.3";
+    } 
+  })
+  imageArray.forEach(image => {
+    if (truncatedTitle === image.title) {
+      highlightedShoe.src = image.src;
+    }
+  })
+}
 
 let currentCartAmount = parseInt(document.querySelector(".cart-amount-holder").innerHTML);
 let amountToAdd = parseInt(document.querySelector(".number-holder").innerHTML);
@@ -99,6 +182,47 @@ window.addEventListener("resize", function () {
 }
 });
 
-document.querySelector(".main-image").addEventListener("click", function() {
-  document.querySelector(".modal-image").src=document.querySelector(".main-image").src;
+mainShoe.addEventListener("click", function() {
+  console.log(mainShoe.getAttribute("src"));
+  shoeInModal(mainShoe);
+})
+
+function shoeInModal(clickedShoe) {
+  let newThumbnailSrc = "";
+  imageArray.forEach(image => {
+    if (clickedShoe.getAttribute("src") === image.src) {
+      modalMain.parentElement.classList.add("active");
+      modalMain.src = image.src;
+      newThumbnailSrc = `../assets/images/${image.title}-thumbnail.jpg`;
+    }
+  })
+  for (let thumbnail of modalThumbnailArray) {
+    if (thumbnail.getAttribute("src") === newThumbnailSrc) {
+      thumbnail.parentElement.style.border = "2px solid hsl(26, 100%, 55%)";
+      thumbnail.style.opacity="0.3";
+    }
+  }
+} 
+
+for (let modalThumbnail of modalThumbnailArray ) {
+  modalThumbnail.addEventListener("click", function() {
+  highlightShoe(modalThumbnail);
+})
+}
+
+
+
+
+
+myModal.addEventListener('hidden.bs.modal', function () {
+  for (let item of carouselItem) {
+    item.classList.remove("active");
+  }
+  for (let divs of modalDiv) {
+    divs.style.border="2px solid transparent";
+  }
+  for (let modal of modalThumbnailArray) {
+      modal.style.opacity="1";
+      modal.removeAttribute("style");
+  }
 })

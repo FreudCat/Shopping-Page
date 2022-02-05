@@ -309,11 +309,11 @@ $shopping-font: 'Kumbh Sans', sans-serif;
   border-radius: 13px;
   border: 2px solid transparent;
   .modal-thumbnail {
-    width: 100%;
-    border-radius: 10px;
-    &:hover, &:focus, &:active {
-      opacity: 0.3;
-    }
+  width: 100%;
+   border-radius: 10px;
+     &:hover, &:focus, &:active {
+       opacity: 0.3;
+   }
   }
 }
 

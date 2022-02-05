@@ -15,12 +15,26 @@
           <div class="container">
             <div class="row">
               <div class="col-12">
+                <div id="modalCarousel" class="carousel slide" data-bs-interval="false" data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img class="modal-image w-100" src="">
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#modalCarousel" data-bs-slide="prev">
+                    <span aria-hidden="true"><img src="../assets/images/icon-previous.svg"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#modalCarousel" data-bs-slide="next">
+                    <span aria-hidden="true"><img src="../assets/images/icon-next.svg"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
                 
-                <img class="modal-image w-100" src="">
               </div>
             </div>
             <div class="row modal-thumbnail-row justify-content-between">
-              <div class="offset-md-1 g-0 col-2 modal-thumbnail-div" style="border:2px solid hsl(26, 100%, 55%);"><img class="modal-thumbnail" src="../assets/images/image-product-1-thumbnail.jpg" style="opacity:0.3;"></div>
+              <div class="offset-md-1 g-0 col-2 modal-thumbnail-div"><img class="modal-thumbnail" src="../assets/images/image-product-1-thumbnail.jpg"></div>
               <div class="col-2 g-0 modal-thumbnail-div"><img class="modal-thumbnail" src="../assets/images/image-product-2-thumbnail.jpg"></div>
               <div class="col-2 g-0 modal-thumbnail-div"><img class="modal-thumbnail" src="../assets/images/image-product-3-thumbnail.jpg"></div>
               <div class="col-2 g-0 modal-thumbnail-div"><img class="modal-thumbnail" src="../assets/images/image-product-4-thumbnail.jpg"></div>
@@ -157,7 +171,7 @@
     
   </main>
 
-  
+ 
 
 <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 <script src="../src/index.js"></script>
