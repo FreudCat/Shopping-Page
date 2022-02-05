@@ -7900,13 +7900,30 @@ textarea.form-control-lg {
   box-shadow: 0px 1px 1px rgba(230, 230, 230, 0.9), -10px 4px 10px rgba(230, 230, 230, 0.9), 10px 8px 15px rgba(230, 230, 230, 0.9);
   border: none;
   width: 20em;
-  text-align: center;
   transform: translate(-45%, 0); }
   .dropdown-menu .checkout-button {
     background-color: #ff7d1a;
     font-family: "Kumbh Sans", sans-serif;
     font-weight: 600;
     color: white; }
+  .dropdown-menu .cart-item-title {
+    font-size: 0.8em;
+    font-weight: 500;
+    font-family: "Kumbh Sans", sans-serif;
+    color: #858b93;
+    margin-bottom: 0; }
+  .dropdown-menu .cart-item-price {
+    font-size: 0.8em;
+    font-weight: 500;
+    font-family: "Kumbh Sans", sans-serif;
+    color: #858b93;
+    margin-top: 0; }
+    .dropdown-menu .cart-item-price .cart-item-total {
+      font-weight: 700;
+      color: black; }
+
+.delete-button:hover .delete-path {
+  fill: #ff7d1a; }
 
 @media only screen and (min-width: 900px) {
   .main-image-row {

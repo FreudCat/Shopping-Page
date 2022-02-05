@@ -7,6 +7,8 @@ const modalMain = document.querySelector(".modal-image");
 const myModal = document.querySelector("#shoeModal");
 const carouselPrev = document.querySelectorAll(".carousel-control-prev");
 const carouselNext = document.querySelectorAll(".carousel-control-next");
+let currentCartAmount = parseInt(document.querySelector(".cart-amount-holder").innerHTML);
+let amountToAdd = parseInt(document.querySelector(".number-holder").innerHTML);
 
 const imageArray = [
   {
@@ -43,6 +45,14 @@ const imageArray = [
   }
 ];
 
+//populate browser information 
+const currentPrice = 125.00; 
+document.querySelector(".set-price").innerHTML = currentPrice.toFixed(2);
+const sale = "50%";
+document.querySelector(".sale-tag").innerHTML = sale;
+const previousPrice = `$250.00`; 
+document.querySelector(".previous-price").innerHTML = previousPrice;
+document.querySelector(".modal-body-items").style.display="none";
 
 
 let index = "";
@@ -150,8 +160,7 @@ function highlightShoe(clickedThumbnail) {
   })
 }
 
-let currentCartAmount = parseInt(document.querySelector(".cart-amount-holder").innerHTML);
-let amountToAdd = parseInt(document.querySelector(".number-holder").innerHTML);
+
 
 document.querySelector(".minus").addEventListener("click", function() {
   updateNumber(amountToAdd-=1);
@@ -174,16 +183,39 @@ function updateNumber(value) {
   }
 }
 
+
+
 function updateCart(value) {
   if (value === 0) {
     document.querySelector(".cart-amount-holder").style.display="none";
+    document.querySelector(".modal-body-empty").style.display = "flex";
+    document.querySelector(".modal-body-items").style.display = "none";
     console.log("cart updated with value of 0 and orange bubble removed");
+    
   } else {
     document.querySelector(".cart-amount-holder").style.display="flex";
+    document.querySelector(".modal-body-empty").style.display = "none";
+    document.querySelector(".modal-body-items").style.display = "flex";
     document.querySelector(".cart-amount-holder").innerHTML = value;
-    console.log("update cart val with new amount and bubble is visible");
+    document.querySelector(".multiply-amount").innerHTML=value;
+    document.querySelector(".cart-item-total").innerHTML = `$${(value * currentPrice).toFixed(2)}`;
+    console.log("update cart val with new amount and bubble is visible");   
   }
+
+  document.querySelector(".delete-button").addEventListener("click", function() {
+    value-=1;
+    if (value > 0) {
+    document.querySelector(".multiply-amount").innerHTML=value;
+    document.querySelector(".cart-item-total").innerHTML = `$${(value * currentPrice).toFixed(2)}`;
+    } else {
+      document.querySelector(".cart-amount-holder").style.display="none";
+      document.querySelector(".modal-body-empty").style.display = "flex";
+      document.querySelector(".modal-body-items").style.display = "none";
+    }
+  })
 } 
+
+
 
 
 
@@ -235,3 +267,14 @@ myModal.addEventListener('hidden.bs.modal', function () {
       modal.removeAttribute("style");
   }
 })
+
+//----Add/remove item cart-------------------------------------------------------------------------------
+//when add to cart button is clicked
+//have a pop up saying items have been added
+//row with three col (image, info, trashcan)
+//get add thumbnail 1 to the cart modal 
+//add text to cart modal 
+//add trashcan button  -> add svg and hover orange
+//multiply the number of items with the price and bold the total 
+//when trash can is clicked, remove one item
+//when there are no items, text should say "there are no items in your cart or whatever" - use conditional with display none 
