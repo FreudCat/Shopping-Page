@@ -7892,7 +7892,7 @@ textarea.form-control-lg {
     margin-bottom: 0.5em;
     color: black; }
 
-.offcanvas-backdrop.show {
+.offcanvas-backdrop.show, .modal-backdrop.show {
   opacity: 0.7; }
 
 .dropdown-menu {
@@ -8041,10 +8041,18 @@ textarea.form-control-lg {
 .main-image-button {
   padding: 0; }
 
+.modal-content {
+  background-color: transparent;
+  border: none; }
+  .modal-content .modal-image {
+    border-radius: 15px; }
+  .modal-content .modal-thumbnail-row {
+    margin-top: 2em; }
+
 .modal-thumbnail-div {
-  width: 18%;
+  width: 20%;
   border-radius: 13px;
-  border: 2px solid transparent; }
+  background-color: white; }
   .modal-thumbnail-div .modal-thumbnail {
     width: 100%;
     border-radius: 10px; }

@@ -93,7 +93,11 @@ function nextSlide(newIndex) {
   thumbnailSrc = `../assets/images/${imageArray[index].title}-thumbnail.jpg`;
 
   for (let thumbnail of carouselArray) {
+    if (myModal.classList.contains("show")) {
+      thumbnail.parentElement.removeAttribute("style");
+    } else {
     thumbnail.parentElement.style.border="2px solid transparent";
+    }
     thumbnail.style.opacity="1";
     thumbnail.removeAttribute("style");
     if (thumbnail.getAttribute("src") === thumbnailSrc) {
@@ -122,7 +126,11 @@ function highlightShoe(clickedThumbnail) {
   }
 
   for (let thumbnail of targetArray) {
+    if (myModal.classList.contains("show")) {
+      thumbnail.parentElement.removeAttribute("style");
+    } else {
     thumbnail.parentElement.style.border="2px solid transparent";
+    }
     thumbnail.style.opacity="1";
     thumbnail.removeAttribute("style");
   }
@@ -222,7 +230,7 @@ for (let modalThumbnail of modalThumbnailArray ) {
 myModal.addEventListener('hidden.bs.modal', function () {
   carouselItem.classList.remove("active");
   for (let modal of modalThumbnailArray) {
-      modal.parentElement.style.border="2px solid transparent";
+      modal.parentElement.removeAttribute("style");
       modal.style.opacity="1";
       modal.removeAttribute("style");
   }
