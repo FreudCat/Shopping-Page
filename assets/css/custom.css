@@ -8058,12 +8058,44 @@ textarea.form-control-lg {
 .main-image-button {
   padding: 0; }
 
-.modal-content {
+.thankyou-content {
   background-color: transparent;
   border: none; }
-  .modal-content .modal-image {
+  .thankyou-content .thankyou-header {
+    border: none; }
+  .thankyou-content .thankyou-body {
+    background-color: white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px; }
+  .thankyou-content .thankyou-footer {
+    background-color: white; }
+  .thankyou-content .thankyou-button {
+    background-color: #ff7d1a;
+    font-family: "Kumbh Sans", sans-serif;
+    font-weight: 600;
+    font-size: 1em;
+    color: white;
+    border-radius: 10px; }
+    .thankyou-content .thankyou-button:active {
+      opacity: 0.5;
+      border: none; }
+
+.add-cart-text {
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: 600;
+  font-size: 1.5em; }
+
+.thank-you {
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: 400;
+  color: #68707d; }
+
+.shoe-modal-content {
+  background-color: transparent;
+  border: none; }
+  .shoe-modal-content .modal-image {
     border-radius: 15px; }
-  .modal-content .modal-thumbnail-row {
+  .shoe-modal-content .modal-thumbnail-row {
     margin-top: 2em; }
 
 .carousel-control-next {

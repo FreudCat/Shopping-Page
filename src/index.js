@@ -11,6 +11,7 @@ let tempValue = "";
 let cartAmountHolder = document.querySelector(".cart-amount-holder");
 
 //localStorage.clear();
+
 console.log(localStorage.getItem("stored-amount"));
 const currentPrice = 125.00; 
 document.querySelector(".set-price").innerHTML = currentPrice.toFixed(2);

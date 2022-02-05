@@ -326,9 +326,47 @@ $shopping-font: 'Kumbh Sans', sans-serif;
   padding: 0;
 }
 
+.thankyou-content {
+  background-color: transparent;
+  border: none;
+  .thankyou-header {
+    border: none;
+  }
+  .thankyou-body {
+    background-color: $white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  .thankyou-footer {
+    background-color: $white;
+  }
+  .thankyou-button {
+    background-color: $orange;
+    font-family: $shopping-font;
+    font-weight: 600;
+    font-size: 1em;
+    color: $white;
+    border-radius: 10px;
+    &:active {
+      opacity: 0.5;
+      border: none;
+    }
+  }
+}
+
+.add-cart-text {
+  font-family: $shopping-font;
+  font-weight: 600;
+  font-size: 1.5em;
+}
+.thank-you {
+  font-family: $shopping-font;
+  font-weight: 400;
+  color: $dark-gray-blue;
+}
 
 
-.modal-content {
+.shoe-modal-content {
   background-color: transparent;
   border: none;
   .modal-image {
