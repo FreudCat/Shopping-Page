@@ -92,17 +92,6 @@ function updateCart(changeAmount) {
 document.querySelector(".delete-button").addEventListener("click", function() {
   updateCart(-1);
 })
-//   newAmount-=1;
-//   if (newAmount > 0) {
-//     localStorage.setItem("stored-amount", newAmount);
-
-//   document.querySelector(".multiply-amount").innerHTML=newAmount;
-//   cartAmountHolder.innerHTML = newAmount;
-//   document.querySelector(".cart-item-total").innerHTML = `$${(newAmount * currentPrice).toFixed(2)}`;
-//   } else {
-    
-//   }
-// })
 
 const imageArray = [
   {
@@ -138,13 +127,6 @@ const imageArray = [
     src: "../assets/images/image-product-4-thumbnail.jpg"
   }
 ];
-
-
-
-
-
-
-
 
 let index = "";
 for (let prevButton of carouselPrev) {
