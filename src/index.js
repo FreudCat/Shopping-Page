@@ -5,6 +5,8 @@ const carouselItem = document.querySelector(".carousel-item");
 const modalThumbnailArray= document.querySelectorAll(".modal-thumbnail");
 const modalMain = document.querySelector(".modal-image");
 const myModal = document.querySelector("#shoeModal");
+const carouselPrev = document.querySelectorAll(".carousel-control-prev");
+const carouselNext = document.querySelectorAll(".carousel-control-next");
 
 const imageArray = [
   {
@@ -41,18 +43,25 @@ const imageArray = [
   }
 ];
 
+
+
 let index = "";
-document.querySelector(".carousel-control-prev").addEventListener("click", function() {
+for (let prevButton of carouselPrev) {
+prevButton.addEventListener("click", function() {
+  console.log("clicked");
   if (myModal.classList.contains("show")) {
     currentSlideSrc=modalMain.getAttribute("src");
+    console.log("modalslciked");
   } else {
     currentSlideSrc=mainShoe.getAttribute("src");
+    console.log("mainclicked");
   }
   index = imageArray.findIndex( image => image.src === currentSlideSrc); 
   nextSlide(index-=1);
 })
-
-document.querySelector(".carousel-control-next").addEventListener("click", function() {
+}
+for (let nextButton of carouselNext) {
+  nextButton.addEventListener("click", function() {
   if (myModal.classList.contains("show")) {
     currentSlideSrc=modalMain.getAttribute("src");
   } else {
@@ -61,6 +70,7 @@ document.querySelector(".carousel-control-next").addEventListener("click", funct
   index = imageArray.findIndex( image => image.src === currentSlideSrc); 
   nextSlide(index+=1);
 })
+}
 
 function nextSlide(newIndex) {
   let carousel = "";

@@ -30,7 +30,6 @@
                     <span class="visually-hidden">Next</span>
                   </button>
                 </div>
-                
               </div>
             </div>
             <div class="row modal-thumbnail-row justify-content-between">
@@ -44,7 +43,6 @@
       </div>
     </div>
   </div>
-
 
   <header>
     <div class="container-fluid shopping-nav-container px-0">
@@ -111,7 +109,21 @@
           <div class="row main-image-row">
             <div class="offset-md-3 col g-0">
               <div class="main-image-div">
-                <img class="main-image w-100" data-bs-toggle="modal" data-bs-target="#shoeModal" src="../assets/images/image-product-1.jpg"></button>
+                <div id="mainCarousel" class="carousel slide" data-bs-interval="false" data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img class="main-image w-100" data-bs-toggle="modal" data-bs-target="#shoeModal" src="../assets/images/image-product-1.jpg">
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev d-md-none" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                    <span aria-hidden="true"><img src="../assets/images/icon-previous.svg"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next d-md-none" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                    <span aria-hidden="true"><img src="../assets/images/icon-next.svg"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -121,7 +133,6 @@
             <div class="col-2 g-0 thumbnail-shoe-div"><img class="thumbnail-shoe" src="../assets/images/image-product-3-thumbnail.jpg"></div>
             <div class="col-2 g-0 thumbnail-shoe-div"><img class="thumbnail-shoe" src="../assets/images/image-product-4-thumbnail.jpg"></div>
           </div>
-
         </section>
         <section class="col-md-6 right-col">
           <div class="row information-row ms-1 ms-md-0 ps-md-0">
@@ -166,18 +177,8 @@
         </section>
       </div>
     </div>
-
-   
-    
   </main>
-
- 
-
 <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 <script src="../src/index.js"></script>
 </body>
-
-
-
-
 </html>
