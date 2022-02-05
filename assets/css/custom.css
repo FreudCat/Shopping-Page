@@ -8049,7 +8049,7 @@ textarea.form-control-lg {
   .modal-content .modal-thumbnail-row {
     margin-top: 2em; }
 
-.carousel-control-next, .carousel-control-prev {
+.carousel-control-next {
   position: absolute;
   height: 2.5em;
   width: 2.5em;
@@ -8059,6 +8059,61 @@ textarea.form-control-lg {
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%); }
+
+.carousel-control-prev:hover, .carousel-control-prev:focus, .carousel-control-prev:active {
+  opacity: 1; }
+  .carousel-control-prev:hover .svg-on-hover, .carousel-control-prev:focus .svg-on-hover, .carousel-control-prev:active .svg-on-hover {
+    stroke: #ff7d1a; }
+
+@media only screen and (min-width: 900px) {
+  .carousel-control-prev {
+    position: absolute;
+    background-color: white;
+    opacity: 1;
+    border-radius: 50px;
+    top: 43%;
+    height: 3.2em;
+    width: 3.2em;
+    -ms-transform: translateX(-55%);
+    transform: translateX(-55%); } }
+
+@media only screen and (max-width: 900px) {
+  .carousel-control-prev {
+    position: absolute;
+    background-color: white;
+    border-radius: 50px;
+    opacity: 1;
+    height: 2.5em;
+    width: 2.5em;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%); } }
+
+.carousel-control-next:hover, .carousel-control-next:focus, .carousel-control-next:active {
+  opacity: 1; }
+  .carousel-control-next:hover .svg-on-hover, .carousel-control-next:focus .svg-on-hover, .carousel-control-next:active .svg-on-hover {
+    stroke: #ff7d1a; }
+
+@media only screen and (min-width: 900px) {
+  .carousel-control-next {
+    position: absolute;
+    background-color: white;
+    opacity: 1;
+    border-radius: 50px;
+    top: 43%;
+    height: 3.2em;
+    width: 3.2em;
+    -ms-transform: translateX(45%);
+    transform: translateX(45%); } }
+
+@media only screen and (max-width: 900px) {
+  .carousel-control-next {
+    position: absolute;
+    height: 2.5em;
+    width: 2.5em;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%); } }
 
 .modal-thumbnail-div {
   width: 20%;

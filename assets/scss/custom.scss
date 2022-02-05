@@ -317,7 +317,7 @@ $shopping-font: 'Kumbh Sans', sans-serif;
   }
 }
 
-.carousel-control-next, .carousel-control-prev {
+.carousel-control-next {
   position: absolute;
   height: 2.5em;
   width: 2.5em;
@@ -327,9 +327,66 @@ $shopping-font: 'Kumbh Sans', sans-serif;
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-
 }
 
+.carousel-control-prev {
+  &:hover, &:focus, &:active {
+    opacity: 1;
+    .svg-on-hover {
+      stroke: $orange;
+    }
+  }
+  @media only screen and (min-width: $shopping-desktop) {
+    position: absolute;
+    background-color: $white;
+    opacity: 1;
+    border-radius: 50px;
+    top: 43%;
+    height: 3.2em;
+    width: 3.2em;
+    -ms-transform: translateX(-55%);
+    transform: translateX(-55%);
+  }
+  @media only screen and (max-width: $shopping-desktop) {
+    position: absolute;
+    background-color: $white;
+    border-radius: 50px;
+    opacity: 1;
+    height: 2.5em;
+    width: 2.5em;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+}
+
+.carousel-control-next {
+  &:hover, &:focus, &:active {
+    opacity: 1;
+    .svg-on-hover {
+      stroke: $orange;
+    }
+  }
+  @media only screen and (min-width: $shopping-desktop) {
+    position: absolute;
+    background-color: $white;
+    opacity: 1;
+    border-radius: 50px;
+    top: 43%;
+    height: 3.2em;
+    width: 3.2em;
+  -ms-transform: translateX(45%);
+  transform: translateX(45%);
+}
+@media only screen and (max-width: $shopping-desktop) {
+  position: absolute;
+  height: 2.5em;
+  width: 2.5em;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+}
 .modal-thumbnail-div {
   width: 20%;
   border-radius: 13px;
@@ -346,6 +403,11 @@ $shopping-font: 'Kumbh Sans', sans-serif;
 .next-svg, .prev-svg {
   overflow: visible;
 }
+
+
+// .svg-cart:hover{
+//   fill: #000000;
+// }
 
 .next-svg {
   margin-left: 0.8em;
