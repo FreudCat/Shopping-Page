@@ -19,20 +19,23 @@ const sale = "50%";
 document.querySelector(".sale-tag").innerHTML = sale;
 const previousPrice = `$250.00`; 
 document.querySelector(".previous-price").innerHTML = previousPrice;
-document.querySelector(".modal-body-items").style.display="none";
 
 
 if (localStorage.length === 0 || (localStorage.getItem("stored-amount") == 0)) {
+  document.querySelector(".checkout-row").style.display = "none";
+  document.querySelector(".modal-body-empty").style.display = "flex";
+  document.querySelector(".modal-body-items").style.display = "none";
   tempValue = 0; 
-} else { 
+} else {  
   tempValue = parseInt(localStorage.getItem("stored-amount"));
   cartAmountHolder.style.display="flex";
-    document.querySelector(".modal-body-empty").style.display = "none";
-    document.querySelector(".modal-body-items").style.display = "flex";
-    cartAmountHolder.innerHTML = tempValue;
-    document.querySelector(".multiply-amount").innerHTML= tempValue;
-    document.querySelector(".cart-item-total").innerHTML = `$${(tempValue * currentPrice).toFixed(2)}`;
-    console.log("update cart val with new amount and bubble is visible");   
+  cartAmountHolder.innerHTML = tempValue;
+  document.querySelector(".checkout-row").style.display = "flex";
+  document.querySelector(".modal-body-empty").style.display = "none";
+  document.querySelector(".modal-body-items").style.display = "flex";
+  document.querySelector(".multiply-amount").innerHTML= tempValue;
+  document.querySelector(".cart-item-total").innerHTML = `$${(tempValue * currentPrice).toFixed(2)}`;
+  console.log("update cart val with new amount and bubble is visible");   
 }
 
 
@@ -76,6 +79,7 @@ function updateCart(changeAmount) {
   
   cartAmountHolder.style.display="flex";
     document.querySelector(".modal-body-empty").style.display = "none";
+    document.querySelector(".checkout-row").style.display = "flex";
     document.querySelector(".modal-body-items").style.display = "flex";
     cartAmountHolder.innerHTML = newAmount;
     document.querySelector(".multiply-amount").innerHTML= newAmount;
@@ -83,10 +87,11 @@ function updateCart(changeAmount) {
     console.log("update cart val with new amount and bubble is visible");  
   } else {
     localStorage.setItem("stored-amount", 0);
-
+    document.querySelector(".checkout-row").style.display = "none";
     cartAmountHolder.style.display="none";
     document.querySelector(".modal-body-empty").style.display = "flex";
     document.querySelector(".modal-body-items").style.display = "none";
+    
   }
 } 
 

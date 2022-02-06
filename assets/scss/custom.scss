@@ -19,7 +19,6 @@ $shopping-font: 'Kumbh Sans', sans-serif;
   margin-left: 9em;
   border-bottom: 2px solid $light-gray-blue;
   @media only screen and (max-width: $shopping-desktop) {
-    border-bottom: 1px red solid;
     margin-right: 0;
     margin-left: 0;
   }
@@ -35,7 +34,7 @@ $shopping-font: 'Kumbh Sans', sans-serif;
 
 .header-link {
   font-family: $shopping-font;
-  font-weight: 600;
+  font-weight: 500;
   color: $dark-gray-blue;
   margin-right: 2em;
   border-bottom: 3px solid transparent;
@@ -119,23 +118,36 @@ $shopping-font: 'Kumbh Sans', sans-serif;
   box-shadow: 0px 1px 1px rgba(230, 230, 230, 0.9), 
         -10px 4px 10px rgba(230, 230, 230, 0.9), 10px 8px 15px rgba(230, 230, 230, 0.9);
   border: none;
-  width: 20em;
-  transform: translate(-45%, 0);
+  width: 23em;
+  transform: translate(-45%, 8%);
+  .modal-cart-header {
+    border: red;
+  }
+  .cart-title {
+    font-family: $shopping-font;
+    font-weight: 800;
+  }
+  .cart-image {
+    border-radius: 5px;
+  }
   .checkout-button {
     background-color: $orange;
+    border-radius: 10px;
     font-family: $shopping-font;
+    text-align: center;
+    font-size: 1em;
     font-weight: 600;
     color: $white;
   }
   .cart-item-title {
-    font-size: 0.8em;
+    font-size: 1em;
     font-weight: 500;
     font-family: $shopping-font;
     color: hsl(214, 6%, 55%);
     margin-bottom: 0;
   }
   .cart-item-price {
-    font-size: 0.8em;
+    font-size: 1em;
     font-weight: 500;
     font-family: $shopping-font;
     color: hsl(214, 6%, 55%);
@@ -145,11 +157,24 @@ $shopping-font: 'Kumbh Sans', sans-serif;
       color: $black;
     }
   }
+  .empty-text {
+    font-size: 1em;
+    font-weight: 700;
+    font-family: $shopping-font;
+    color: $dark-gray-blue;
+  }
+
 }
+
+
 .delete-button:hover  {
 .delete-path {
   fill: $orange;
 }
+}
+
+.multiply-amount::after {
+  content: "\00a0";
 }
 
 .main-image-row {
@@ -221,7 +246,7 @@ $shopping-font: 'Kumbh Sans', sans-serif;
 .current-price {
   font-family: $shopping-font;
   color: $black;
-  font-size: 1.7em;
+  font-size: 1.6em;
   font-weight: 700;
   margin-bottom: 0.2em;
 }
@@ -252,6 +277,11 @@ $shopping-font: 'Kumbh Sans', sans-serif;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
   }
+  .minus-sign {
+    @media only screen and (min-width: $shopping-desktop) {
+    margin-bottom: 0.2em;
+    }
+  }
   &:active {
     .minus-sign {
       opacity: 0.5;
@@ -269,6 +299,11 @@ $shopping-font: 'Kumbh Sans', sans-serif;
   .plus-box {
     padding-top: 0.5em;
     padding-bottom: 0.5em;
+  }
+  .plus-sign {
+  @media only screen and (min-width: $shopping-desktop) {
+    margin-bottom: 0.2em;
+    }
   }
   &:active {
     .plus-sign {

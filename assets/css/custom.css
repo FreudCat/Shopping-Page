@@ -7816,7 +7816,6 @@ textarea.form-control-lg {
   border-bottom: 2px solid #f7f8fd; }
   @media only screen and (max-width: 900px) {
     .shopping-nav {
-      border-bottom: 1px red solid;
       margin-right: 0;
       margin-left: 0; } }
   .shopping-nav .shopping-nav-toggle {
@@ -7827,7 +7826,7 @@ textarea.form-control-lg {
 
 .header-link {
   font-family: "Kumbh Sans", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   color: #68707d;
   margin-right: 2em;
   border-bottom: 3px solid transparent; }
@@ -7899,21 +7898,31 @@ textarea.form-control-lg {
   border-radius: 10px;
   box-shadow: 0px 1px 1px rgba(230, 230, 230, 0.9), -10px 4px 10px rgba(230, 230, 230, 0.9), 10px 8px 15px rgba(230, 230, 230, 0.9);
   border: none;
-  width: 20em;
-  transform: translate(-45%, 0); }
+  width: 23em;
+  transform: translate(-45%, 8%); }
+  .dropdown-menu .modal-cart-header {
+    border: red; }
+  .dropdown-menu .cart-title {
+    font-family: "Kumbh Sans", sans-serif;
+    font-weight: 800; }
+  .dropdown-menu .cart-image {
+    border-radius: 5px; }
   .dropdown-menu .checkout-button {
     background-color: #ff7d1a;
+    border-radius: 10px;
     font-family: "Kumbh Sans", sans-serif;
+    text-align: center;
+    font-size: 1em;
     font-weight: 600;
     color: white; }
   .dropdown-menu .cart-item-title {
-    font-size: 0.8em;
+    font-size: 1em;
     font-weight: 500;
     font-family: "Kumbh Sans", sans-serif;
     color: #858b93;
     margin-bottom: 0; }
   .dropdown-menu .cart-item-price {
-    font-size: 0.8em;
+    font-size: 1em;
     font-weight: 500;
     font-family: "Kumbh Sans", sans-serif;
     color: #858b93;
@@ -7921,9 +7930,17 @@ textarea.form-control-lg {
     .dropdown-menu .cart-item-price .cart-item-total {
       font-weight: 700;
       color: black; }
+  .dropdown-menu .empty-text {
+    font-size: 1em;
+    font-weight: 700;
+    font-family: "Kumbh Sans", sans-serif;
+    color: #68707d; }
 
 .delete-button:hover .delete-path {
   fill: #ff7d1a; }
+
+.multiply-amount::after {
+  content: "\00a0"; }
 
 @media only screen and (min-width: 900px) {
   .main-image-row {
@@ -7982,7 +7999,7 @@ textarea.form-control-lg {
 .current-price {
   font-family: "Kumbh Sans", sans-serif;
   color: black;
-  font-size: 1.7em;
+  font-size: 1.6em;
   font-weight: 700;
   margin-bottom: 0.2em; }
 
@@ -8009,6 +8026,9 @@ textarea.form-control-lg {
   .minus .minus-box {
     padding-top: 0.5em;
     padding-bottom: 0.5em; }
+  @media only screen and (min-width: 900px) {
+    .minus .minus-sign {
+      margin-bottom: 0.2em; } }
   .minus:active .minus-sign {
     opacity: 0.5; }
 
@@ -8019,6 +8039,9 @@ textarea.form-control-lg {
   .plus .plus-box {
     padding-top: 0.5em;
     padding-bottom: 0.5em; }
+  @media only screen and (min-width: 900px) {
+    .plus .plus-sign {
+      margin-bottom: 0.2em; } }
   .plus:active .plus-sign {
     opacity: 0.5; }
 
