@@ -12,6 +12,8 @@ let cartAmountHolder = document.querySelector(".cart-amount-holder");
 
 //localStorage.clear();
 
+
+
 console.log(localStorage.getItem("stored-amount"));
 const currentPrice = 125.00; 
 document.querySelector(".set-price").innerHTML = currentPrice.toFixed(2);
@@ -50,7 +52,7 @@ document.querySelector(".plus").addEventListener("click", function() {
 document.querySelector(".add-cart-button").addEventListener("click", function() {
   if (addToCartValue > 0) {
     addToCartDisplay.innerHTML=0;
-    
+    console.log(`local storage After clicking add to cart: ${localStorage.getItem("stored-amount")}`);
     console.log(addToCartDisplay.innerHTML);
     updateCart(addToCartValue);
     addToCartValue=0;
@@ -67,6 +69,7 @@ function updateNumber(value) {
   }
   else {
     addToCartDisplay.innerHTML=value;
+    
   }
 }
 
@@ -89,6 +92,7 @@ function updateCart(changeAmount) {
     localStorage.setItem("stored-amount", 0);
     document.querySelector(".checkout-row").style.display = "none";
     cartAmountHolder.style.display="none";
+    cartAmountHolder.innerHTML = newAmount;
     document.querySelector(".modal-body-empty").style.display = "flex";
     document.querySelector(".modal-body-items").style.display = "none";
     
