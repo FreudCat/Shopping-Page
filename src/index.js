@@ -9,100 +9,12 @@ const carouselPrev = document.querySelectorAll(".carousel-control-prev");
 const carouselNext = document.querySelectorAll(".carousel-control-next");
 let tempValue = "";
 let cartAmountHolder = document.querySelector(".cart-amount-holder");
-
-//localStorage.clear();
-
-
-
-console.log(localStorage.getItem("stored-amount"));
-const currentPrice = 125.00; 
-document.querySelector(".set-price").innerHTML = currentPrice.toFixed(2);
-const sale = "50%";
-document.querySelector(".sale-tag").innerHTML = sale;
-const previousPrice = `$250.00`; 
-document.querySelector(".previous-price").innerHTML = previousPrice;
-
-
-if (localStorage.length === 0 || (localStorage.getItem("stored-amount") == 0)) {
-  document.querySelector(".checkout-row").style.display = "none";
-  document.querySelector(".modal-body-empty").style.display = "flex";
-  document.querySelector(".modal-body-items").style.display = "none";
-  tempValue = 0; 
-} else {  
-  tempValue = parseInt(localStorage.getItem("stored-amount"));
-  cartAmountHolder.style.display="flex";
-  cartAmountHolder.innerHTML = tempValue;
-  document.querySelector(".checkout-row").style.display = "flex";
-  document.querySelector(".modal-body-empty").style.display = "none";
-  document.querySelector(".modal-body-items").style.display = "flex";
-  document.querySelector(".multiply-amount").innerHTML= tempValue;
-  document.querySelector(".cart-item-total").innerHTML = `$${(tempValue * currentPrice).toFixed(2)}`;
-  console.log("update cart val with new amount and bubble is visible");   
-}
-
-
-let addToCartDisplay = document.querySelector(".number-holder");
-let addToCartValue = parseInt(addToCartDisplay.innerHTML);
-document.querySelector(".minus").addEventListener("click", function() {
-  updateNumber(addToCartValue-=1);
-})
-document.querySelector(".plus").addEventListener("click", function() {
-  updateNumber(addToCartValue+=1);
-})
-document.querySelector(".add-cart-button").addEventListener("click", function() {
-  if (addToCartValue > 0) {
-    addToCartDisplay.innerHTML=0;
-    console.log(`local storage After clicking add to cart: ${localStorage.getItem("stored-amount")}`);
-    console.log(addToCartDisplay.innerHTML);
-    updateCart(addToCartValue);
-    addToCartValue=0;
-  } else {
-    console.log("I'm 0");
-  }
-})
-
-function updateNumber(value) {
-  console.log(value);
-  if (value < 0) {
-    console.log("User clicked (-) button when value is already 0");
-    addToCartValue=0;
-  }
-  else {
-    addToCartDisplay.innerHTML=value;
-    
-  }
-}
-
-
-
-function updateCart(changeAmount) {
-  let newAmount = parseInt(cartAmountHolder.innerHTML) + changeAmount;
-  if (newAmount > 0) {
-  localStorage.setItem("stored-amount", newAmount);
-  
-  cartAmountHolder.style.display="flex";
-    document.querySelector(".modal-body-empty").style.display = "none";
-    document.querySelector(".checkout-row").style.display = "flex";
-    document.querySelector(".modal-body-items").style.display = "flex";
-    cartAmountHolder.innerHTML = newAmount;
-    document.querySelector(".multiply-amount").innerHTML= newAmount;
-    document.querySelector(".cart-item-total").innerHTML = `$${(newAmount * currentPrice).toFixed(2)}`;
-    console.log("update cart val with new amount and bubble is visible");  
-  } else {
-    localStorage.setItem("stored-amount", 0);
-    document.querySelector(".checkout-row").style.display = "none";
-    cartAmountHolder.style.display="none";
-    cartAmountHolder.innerHTML = newAmount;
-    document.querySelector(".modal-body-empty").style.display = "flex";
-    document.querySelector(".modal-body-items").style.display = "none";
-    
-  }
-} 
-
-document.querySelector(".delete-button").addEventListener("click", function() {
-  updateCart(-1);
-})
-
+const checkoutRow = document.querySelector(".checkout-row");
+const emptyCartModal = document.querySelector(".modal-body-empty");
+const hasItemsCartModal = document.querySelector(".modal-body-items");
+const multiplier = document.querySelector(".multiply-amount");
+const cartTotal = document.querySelector(".cart-item-total");
+const addCartButton = document.querySelector(".add-cart-button");
 const imageArray = [
   {
     title: "image-product-1",
@@ -138,34 +50,115 @@ const imageArray = [
   }
 ];
 
+//localStorage.clear();
+
+//Items populated on page load
+const currentPrice = 125.00; 
+document.querySelector(".set-price").innerHTML = currentPrice.toFixed(2);
+const sale = "50%";
+document.querySelector(".sale-tag").innerHTML = sale;
+const previousPrice = `$250.00`; 
+document.querySelector(".previous-price").innerHTML = previousPrice;
+addCartButton.removeAttribute("data-bs-toggle");
+
+if (localStorage.length === 0 || (localStorage.getItem("stored-amount") == 0)) {
+  checkoutRow.style.display = "none";
+  emptyCartModal.style.display = "flex";
+  hasItemsCartModal.style.display = "none";
+  tempValue = 0; 
+} else {  
+  tempValue = parseInt(localStorage.getItem("stored-amount"));
+  cartAmountHolder.style.display="flex";
+  cartAmountHolder.innerHTML = tempValue;
+  checkoutRow.style.display = "flex";
+  emptyCartModal.style.display = "none";
+  hasItemsCartModal.style.display = "flex";
+  multiplier.innerHTML= tempValue;
+  cartTotal.innerHTML = `$${(tempValue * currentPrice).toFixed(2)}`;
+}
+
+
+let addToCartDisplay = document.querySelector(".number-holder");
+let addToCartValue = parseInt(addToCartDisplay.innerHTML);
+document.querySelector(".minus").addEventListener("click", function() {
+  updateNumber(addToCartValue-=1);
+})
+document.querySelector(".plus").addEventListener("click", function() {
+  updateNumber(addToCartValue+=1);
+})
+document.querySelector(".delete-button").addEventListener("click", function() {
+  updateCart(-1);
+})
+addCartButton.addEventListener("click", function() {
+  if (addToCartValue > 0) {
+    addToCartDisplay.innerHTML=0;
+    updateCart(addToCartValue);
+    addToCartValue=0;
+    addCartButton.removeAttribute("data-bs-toggle");
+  } else {
+    console.log("I'm 0");
+  }
+})
+
+function updateNumber(value) {
+  console.log(value);
+  if (value < 0) {
+    console.log("User clicked (-) button when value is already 0");
+    addToCartValue=0;  
+    addCartButton.removeAttribute("data-bs-toggle");
+  }
+  else {
+    addToCartDisplay.innerHTML=value;
+    addCartButton.setAttribute("data-bs-toggle", "modal");
+  }
+}
+
+function updateCart(changeAmount) {
+  let newAmount = parseInt(cartAmountHolder.innerHTML) + changeAmount;
+  if (newAmount > 0) {
+    localStorage.setItem("stored-amount", newAmount); 
+    cartAmountHolder.style.display="flex";
+    emptyCartModal.style.display = "none";
+    checkoutRow.style.display = "flex";
+    hasItemsCartModal.style.display = "flex";
+    cartAmountHolder.innerHTML = newAmount;
+    multiplier.innerHTML= newAmount;
+    cartTotal.innerHTML = `$${(newAmount * currentPrice).toFixed(2)}`;
+    console.log("update cart val with new amount and bubble is visible");  
+  } else {
+    localStorage.setItem("stored-amount", 0);
+    checkoutRow.style.display = "none";
+    cartAmountHolder.style.display="none";
+    cartAmountHolder.innerHTML = newAmount;
+    emptyCartModal.style.display = "flex";
+    hasItemsCartModal.style.display = "none";
+  }
+} 
+
 let index = "";
 for (let prevButton of carouselPrev) {
-prevButton.addEventListener("click", function() {
-  console.log("clicked");
-  if (myModal.classList.contains("show")) {
-    currentSlideSrc=modalMain.getAttribute("src");
-    console.log("modalslciked");
-  } else {
-    currentSlideSrc=mainShoe.getAttribute("src");
-    console.log("mainclicked");
-  }
-  index = imageArray.findIndex( image => image.src === currentSlideSrc); 
-  nextSlide(index-=1);
-})
+  prevButton.addEventListener("click", function() {
+    if (myModal.classList.contains("show")) {
+      currentSlideSrc=modalMain.getAttribute("src");
+    } else {
+      currentSlideSrc=mainShoe.getAttribute("src");
+    }
+    index = imageArray.findIndex( image => image.src === currentSlideSrc); 
+    nextSlide(index-=1);
+  })
 }
+
 for (let nextButton of carouselNext) {
   nextButton.addEventListener("click", function() {
-  if (myModal.classList.contains("show")) {
-    currentSlideSrc=modalMain.getAttribute("src");
-  } else {
-    currentSlideSrc=mainShoe.getAttribute("src");
-  }
-  index = imageArray.findIndex( image => image.src === currentSlideSrc); 
-  nextSlide(index+=1);
-})
+    if (myModal.classList.contains("show")) {
+      currentSlideSrc=modalMain.getAttribute("src");
+    } else {
+      currentSlideSrc=mainShoe.getAttribute("src");
+    }
+    index = imageArray.findIndex( image => image.src === currentSlideSrc); 
+    nextSlide(index+=1);
+  })
 }
-
-
 
 function nextSlide(newIndex) {
   let carousel = "";
@@ -191,7 +184,7 @@ function nextSlide(newIndex) {
     if (myModal.classList.contains("show")) {
       thumbnail.parentElement.removeAttribute("style");
     } else {
-    thumbnail.parentElement.style.border="2px solid transparent";
+      thumbnail.parentElement.style.border="2px solid transparent";
     }
     thumbnail.style.opacity="1";
     thumbnail.removeAttribute("style");
@@ -201,7 +194,6 @@ function nextSlide(newIndex) {
     }
   }
 }
-
 
 for (let thumbnail of mainThumbnailArray) {
   thumbnail.addEventListener("click", function() {
@@ -224,7 +216,7 @@ function highlightShoe(clickedThumbnail) {
     if (myModal.classList.contains("show")) {
       thumbnail.parentElement.removeAttribute("style");
     } else {
-    thumbnail.parentElement.style.border="2px solid transparent";
+      thumbnail.parentElement.style.border="2px solid transparent";
     }
     thumbnail.style.opacity="1";
     thumbnail.removeAttribute("style");
@@ -245,22 +237,19 @@ function highlightShoe(clickedThumbnail) {
   })
 }
 
-
-
-if(window.innerWidth < 700){
-  console.log("innderwidth");
+if(window.innerWidth < 700) {
   document.querySelector(".main-image").removeAttribute("data-bs-toggle");
 }
+
 window.addEventListener("resize", function () {
   if (window.innerWidth > 700) {
     document.querySelector(".main-image").setAttribute("data-bs-toggle", "modal");
   } else {
     document.querySelector(".main-image").removeAttribute("data-bs-toggle");
-}
+  }
 });
 
 mainShoe.addEventListener("click", function() {
-  console.log(mainShoe.getAttribute("src"));
   shoeInModal(mainShoe);
 })
 
@@ -290,8 +279,8 @@ for (let modalThumbnail of modalThumbnailArray ) {
 myModal.addEventListener('hidden.bs.modal', function () {
   carouselItem.classList.remove("active");
   for (let modal of modalThumbnailArray) {
-      modal.parentElement.removeAttribute("style");
-      modal.style.opacity="1";
-      modal.removeAttribute("style");
+    modal.parentElement.removeAttribute("style");
+    modal.style.opacity="1";
+    modal.removeAttribute("style");
   }
 })

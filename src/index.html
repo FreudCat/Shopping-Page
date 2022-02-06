@@ -7,65 +7,7 @@
   <link rel="stylesheet" href="../assets/css/custom.css";>
 </head>
 <body>
-
-  <div class="modal fade" id="addToCartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content thankyou-content">
-        <div class="modal-header thankyou-header px-0 pb-3">
-          <button type="button" class="btn d-flex ms-auto p-0" data-bs-dismiss="modal" aria-label="Close"><svg width="14" height="15" xmlns="http://www.w3.org/2000/svg"><path class="close-svg" d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#FFFFFF" fill-rule="evenodd"/></svg></button>
-        </div>
-        
-         
-        <div class="modal-body thankyou-body">
-          <p class="add-cart-text text-center">Item added to cart</p>
-          <p class="thank-you text-center">Thank you for shopping</p>
-        </div>
-        <div class="modal-footer justify-content-center thankyou-footer">
-          <button type="button" class="btn thankyou-button" data-bs-dismiss="modal">Keep shopping</button>
-          <button type="button" class="btn thankyou-button" data-bs-dismiss="modal">Go to checkout</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal fade" id="shoeModal" tabindex="-1" aria-labelledby="shoeModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-     
-      <div class="modal-content shoe-modal-content"> 
-        <button type="button" class="btn d-flex ms-auto p-0" data-bs-dismiss="modal" aria-label="Close"><svg width="14" height="15" xmlns="http://www.w3.org/2000/svg"><path class="close-svg" d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#FFFFFF" fill-rule="evenodd"/></svg></button>     
-        <div class="modal-body px-0">
-          <div class="container">
-            <div class="row">
-              <div class="col-12 g-0">
-                <div id="modalCarousel" class="carousel slide carousel-fade" data-bs-interval="false" data-bs-ride="carousel">
-                  <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <img class="modal-image w-100" src="">
-                    </div>
-                  </div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#modalCarousel" data-bs-slide="prev">
-                    <span aria-hidden="true"><svg class="prev-svg mb-1" width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path class="svg-on-hover" d="M11 1 3 9l8 8" stroke="#000000" stroke-width="3" fill="none" fill-rule="evenodd"/></svg></span>
-                    <span class="visually-hidden">Previous</span>
-                  </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#modalCarousel" data-bs-slide="next">
-                    <span aria-hidden="true"><svg class="next-svg me-2 mb-1" width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path class="svg-on-hover" d="m2 1 8 8-8 8" stroke="#000000" stroke-width="3" fill="none" fill-rule="evenodd"/></svg></span>
-                    <span class="visually-hidden">Next</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="row modal-thumbnail-row justify-content-between px-4 mx-1">
-              <div class="g-0 col-2 modal-thumbnail-div"><img class="modal-thumbnail" src="../assets/images/image-product-1-thumbnail.jpg"></div>
-              <div class="col-2 g-0 modal-thumbnail-div"><img class="modal-thumbnail" src="../assets/images/image-product-2-thumbnail.jpg"></div>
-              <div class="col-2 g-0 modal-thumbnail-div"><img class="modal-thumbnail" src="../assets/images/image-product-3-thumbnail.jpg"></div>
-              <div class="col-2 g-0 modal-thumbnail-div"><img class="modal-thumbnail" src="../assets/images/image-product-4-thumbnail.jpg"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  
   <header>
     <div class="container-fluid shopping-nav-container px-0">
       <nav class="navbar navbar-expand-lg navbar-light shopping-nav pt-0 pt-md-3 pb-0">
@@ -113,31 +55,12 @@
               </div>
             </div>
           </div>
-      
-            <div class="avatar-holder ms-auto mt-3 mt-md-0 mb-4 me-4 me-md-0 mb-md-3">
-              <img class="avatar" src="../assets/images/image-avatar.png">
-            </div>
-          </div>
-    </nav> 
-  </div>
-
-<!-------------------------------Offcanvas sidenav-------------------------------------------->
-    <div class="offcanvas shopping offcanvas-start" tabindex="-1" id="shoppingSupportedContent" aria-labelledby="offcanvasExampleLabel">
-      <div class="offcanvas-header">
-        <button type="button" class="btn ps-2 text-reset" data-bs-dismiss="offcanvas" aria-label="Close"><img src="../assets/images/icon-close.svg"></button>
-      </div>
-      <div class="offcanvas-body">
-        <ul class='navbar-nav flex-nowrap shopping-unordered-list ms-2'>
-          <li class='nav-item'><a class = "nav-link offcanvas-link" href="#">Collections</a></li> 
-          <li class='nav-item'><a class = "nav-link offcanvas-link" href="#">Men</a></li>
-          <li class='nav-item'><a class = "nav-link offcanvas-link" href="#">Women</a></li>
-          <li class='nav-item'><a class = "nav-link offcanvas-link" href="#">About</a></li>
-          <li class='nav-item'><a class = "nav-link offcanvas-link" href="#">Contact</a></li>
-        </ul>
-      </div>
+        <div class="avatar-holder ms-auto mt-3 mt-md-0 mb-4 me-4 me-md-0 mb-md-3">
+          <img class="avatar" src="../assets/images/image-avatar.png">
+        </div>
+      </nav> 
     </div>
-<!-------------------------------Offcanvas sidenav end-------------------------------------------->
-</header>
+  </header>
   <main>
     <div class="container-fluid">
       <div class="row">
@@ -206,7 +129,7 @@
             </div>
             </div>
             <div class="col-md-6 add-cart-div text-center px-2 px-md-3 mt-3 mt-md-0">
-              <button type="button" class="btn add-cart-button w-100" data-bs-toggle="modal" data-bs-target="#addToCartModal"><svg class="mb-md-1" width="35" height="20" xmlns="http://www.w3.org/2000/svg"><path class="svg-cart" d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="#ffffff" fill-rule="nonzero"/></svg>Add to cart</button>
+              <button type="button" class="btn add-cart-button w-100" data-bs-toggle="modal" data-bs-target="#thank-you-modal"><svg class="mb-md-1" width="35" height="20" xmlns="http://www.w3.org/2000/svg"><path class="svg-cart" d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="#ffffff" fill-rule="nonzero"/></svg>Add to cart</button>
             </div>
           </div>
           </div>
@@ -214,6 +137,85 @@
       </div>
     </div>
   </main>
+
+<!-------------------------------Modals------------------------------------------------------->
+  <div class="modal fade" id="thank-you-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content thankyou-content">
+        <div class="modal-header thankyou-header px-0 pb-3">
+          <button type="button" class="btn d-flex ms-auto p-0" data-bs-dismiss="modal" aria-label="Close"><svg width="14" height="15" xmlns="http://www.w3.org/2000/svg"><path class="close-svg" d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#FFFFFF" fill-rule="evenodd"/></svg></button>
+        </div>
+        
+         
+        <div class="modal-body thankyou-body">
+          <p class="add-cart-text text-center">Item added to cart</p>
+          <p class="thank-you text-center">Thank you for shopping</p>
+        </div>
+        <div class="modal-footer justify-content-center thankyou-footer">
+          <button type="button" class="btn thankyou-button" data-bs-dismiss="modal">Keep shopping</button>
+          <button type="button" class="btn thankyou-button" data-bs-dismiss="modal">Go to checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="shoeModal" tabindex="-1" aria-labelledby="shoeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+     
+      <div class="modal-content shoe-modal-content"> 
+        <button type="button" class="btn d-flex ms-auto p-0" data-bs-dismiss="modal" aria-label="Close"><svg width="14" height="15" xmlns="http://www.w3.org/2000/svg"><path class="close-svg" d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#FFFFFF" fill-rule="evenodd"/></svg></button>     
+        <div class="modal-body px-0">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 g-0">
+                <div id="modal-carousel" class="carousel slide carousel-fade" data-bs-interval="false" data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img class="modal-image w-100" src="">
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#modal-carousel" data-bs-slide="prev">
+                    <span aria-hidden="true"><svg class="prev-svg mb-1" width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path class="svg-on-hover" d="M11 1 3 9l8 8" stroke="#000000" stroke-width="3" fill="none" fill-rule="evenodd"/></svg></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#modal-carousel" data-bs-slide="next">
+                    <span aria-hidden="true"><svg class="next-svg me-2 mb-1" width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path class="svg-on-hover" d="m2 1 8 8-8 8" stroke="#000000" stroke-width="3" fill="none" fill-rule="evenodd"/></svg></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="row modal-thumbnail-row justify-content-between px-4 mx-1">
+              <div class="g-0 col-2 modal-thumbnail-div"><img class="modal-thumbnail" src="../assets/images/image-product-1-thumbnail.jpg"></div>
+              <div class="col-2 g-0 modal-thumbnail-div"><img class="modal-thumbnail" src="../assets/images/image-product-2-thumbnail.jpg"></div>
+              <div class="col-2 g-0 modal-thumbnail-div"><img class="modal-thumbnail" src="../assets/images/image-product-3-thumbnail.jpg"></div>
+              <div class="col-2 g-0 modal-thumbnail-div"><img class="modal-thumbnail" src="../assets/images/image-product-4-thumbnail.jpg"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-------------------------------Modals------------------------------------------------------->
+
+<!-------------------------------Offcanvas sidenav-------------------------------------------->
+<div class="offcanvas shopping offcanvas-start" tabindex="-1" id="shoppingSupportedContent" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <button type="button" class="btn ps-2 text-reset" data-bs-dismiss="offcanvas" aria-label="Close"><img src="../assets/images/icon-close.svg"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class='navbar-nav flex-nowrap shopping-unordered-list ms-2'>
+      <li class='nav-item'><a class = "nav-link offcanvas-link" href="#">Collections</a></li> 
+      <li class='nav-item'><a class = "nav-link offcanvas-link" href="#">Men</a></li>
+      <li class='nav-item'><a class = "nav-link offcanvas-link" href="#">Women</a></li>
+      <li class='nav-item'><a class = "nav-link offcanvas-link" href="#">About</a></li>
+      <li class='nav-item'><a class = "nav-link offcanvas-link" href="#">Contact</a></li>
+    </ul>
+  </div>
+</div>
+<!-------------------------------Offcanvas sidenav end-------------------------------------------->
+
+
 <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 <script src="../src/index.js"></script>
 </body>
