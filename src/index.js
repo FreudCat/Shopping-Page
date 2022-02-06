@@ -15,6 +15,9 @@ const hasItemsCartModal = document.querySelector(".modal-body-items");
 const multiplier = document.querySelector(".multiply-amount");
 const cartTotal = document.querySelector(".cart-item-total");
 const addCartButton = document.querySelector(".add-cart-button");
+
+// TODO 
+// - find way to reuse the shortened titles and - maybe not even src or even the array itself since the images are already labeled as 1 - 4.   
 const imageArray = [
   {
     title: "image-product-1",
@@ -50,9 +53,10 @@ const imageArray = [
   }
 ];
 
-//localStorage.clear();
+// localStorage.clear();
 
-//Items populated on page load
+// Items populated on page load 
+// better to use Int than floats in JS since there's room for error, unless it's specific for the calcluations. If decimals are needed for display, add the decimals there. 
 const currentPrice = 125.00; 
 document.querySelector(".set-price").innerHTML = currentPrice.toFixed(2);
 const sale = "50%";
@@ -160,18 +164,20 @@ for (let nextButton of carouselNext) {
   })
 }
 
+// use ternary operator for the if/else here 
 function nextSlide(newIndex) {
   let carousel = "";
   let carouselArray = "";
   if (myModal.classList.contains("show")) {
-    carousel=modalMain;
+    carousel = modalMain;
     carouselArray = modalThumbnailArray;
   } else {
-    carousel=mainShoe;
+    carousel = mainShoe;
     carouselArray=mainThumbnailArray;
   }
+  // rule - no "magic numbers" - ex. where did this "3" come from? 
   if (newIndex < 0) {
-    index=3; 
+    index = 3; 
   } else if (newIndex > 3) {
     index = 0; 
   } else {
@@ -194,6 +200,10 @@ function nextSlide(newIndex) {
     }
   }
 }
+
+// TODO
+// - remove the .style.whatever and use classList and classes from the SCSS - separates them out so that you can change the scss and it will still work in the functionjs without having to rebuild the js. At that point if you just change the SCSS then it changes without the rebuild. 
+
 
 for (let thumbnail of mainThumbnailArray) {
   thumbnail.addEventListener("click", function() {
@@ -237,10 +247,11 @@ function highlightShoe(clickedThumbnail) {
   })
 }
 
+// TO DO 
+// - review and delete - can we do it better? 
 if(window.innerWidth < 700) {
   document.querySelector(".main-image").removeAttribute("data-bs-toggle");
 }
-
 window.addEventListener("resize", function () {
   if (window.innerWidth > 700) {
     document.querySelector(".main-image").setAttribute("data-bs-toggle", "modal");
@@ -248,6 +259,9 @@ window.addEventListener("resize", function () {
     document.querySelector(".main-image").removeAttribute("data-bs-toggle");
   }
 });
+
+
+
 
 mainShoe.addEventListener("click", function() {
   shoeInModal(mainShoe);

@@ -1,6 +1,23 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+
+// to debug 
+// * {
+//   outline: 1px solid red;
+// }
+//
+
+// TODO - see bootstrap break points specifically 
 $shopping-mobile: 400px; 
 $shopping-desktop: 900px;
 $orange: hsl(26, 100%, 55%);
@@ -14,6 +31,7 @@ $black: hsl(0, 0%, 0%);  //(with 75% opacity for lightbox background)
 $shopping-font: 'Kumbh Sans', sans-serif;
 
 
+// TODO - breakpoint "UP" see bootstrap media queries 
 .shopping-nav {
   margin-right: 9em;
   margin-left: 9em;
@@ -166,13 +184,12 @@ $shopping-font: 'Kumbh Sans', sans-serif;
     font-family: $shopping-font;
     color: $dark-gray-blue;
   }
-
 }
 
 .delete-button:hover  {
-.delete-path {
-  fill: $orange;
-}
+  .delete-path {
+    fill: $orange;
+  }
 }
 
 .multiply-amount::after {
@@ -214,6 +231,8 @@ $shopping-font: 'Kumbh Sans', sans-serif;
     }
   }
 }
+
+
 
 .information-row {
   @media only screen and (min-width: $shopping-desktop) {
