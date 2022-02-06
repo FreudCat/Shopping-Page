@@ -7896,10 +7896,14 @@ textarea.form-control-lg {
 
 .dropdown-menu {
   border-radius: 10px;
-  box-shadow: 0px 1px 1px rgba(230, 230, 230, 0.9), -10px 4px 10px rgba(230, 230, 230, 0.9), 10px 8px 15px rgba(230, 230, 230, 0.9);
+  box-shadow: 0 15px 55px -25px #68707d;
   border: none;
   width: 23em;
   transform: translate(-45%, 8%); }
+  @media only screen and (max-width: 400px) {
+    .dropdown-menu {
+      width: 22em;
+      transform: translate(-63%, 3%); } }
   .dropdown-menu .modal-cart-header {
     border: red; }
   .dropdown-menu .cart-title {
@@ -7988,6 +7992,9 @@ textarea.form-control-lg {
     color: black;
     font-size: 2.5em;
     font-weight: 700; }
+    @media only screen and (max-width: 400px) {
+      .information-row .shoe-name {
+        font-size: 1.8em; } }
   .information-row .description {
     margin-top: 2.5em;
     font-family: "Kumbh Sans", sans-serif;
@@ -7995,6 +8002,9 @@ textarea.form-control-lg {
     font-size: 0.9em;
     font-weight: 500;
     line-height: 1.8em; }
+    @media only screen and (max-width: 400px) {
+      .information-row .description {
+        margin-top: 1em; } }
 
 .current-price {
   font-family: "Kumbh Sans", sans-serif;

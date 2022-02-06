@@ -115,11 +115,14 @@ $shopping-font: 'Kumbh Sans', sans-serif;
 
 .dropdown-menu {
   border-radius: 10px;
-  box-shadow: 0px 1px 1px rgba(230, 230, 230, 0.9), 
-        -10px 4px 10px rgba(230, 230, 230, 0.9), 10px 8px 15px rgba(230, 230, 230, 0.9);
+  box-shadow: 0 15px 55px -25px $dark-gray-blue;
   border: none;
   width: 23em;
   transform: translate(-45%, 8%);
+  @media only screen and (max-width: $shopping-mobile) {
+    width: 22em;
+    transform: translate(-63%, 3%);
+  }
   .modal-cart-header {
     border: red;
   }
@@ -165,7 +168,6 @@ $shopping-font: 'Kumbh Sans', sans-serif;
   }
 
 }
-
 
 .delete-button:hover  {
 .delete-path {
@@ -232,7 +234,10 @@ $shopping-font: 'Kumbh Sans', sans-serif;
     color: $black;
     font-size: 2.5em;
     font-weight: 700;
+    @media only screen and (max-width: $shopping-mobile) {
+      font-size: 1.8em;
   }
+}
   .description {
     margin-top: 2.5em;
     font-family: $shopping-font;
@@ -240,6 +245,9 @@ $shopping-font: 'Kumbh Sans', sans-serif;
     font-size: 0.9em;
     font-weight: 500;
     line-height: 1.8em;
+    @media only screen and (max-width: $shopping-mobile) {
+      margin-top: 1em;
+  }
   }
 }
 
