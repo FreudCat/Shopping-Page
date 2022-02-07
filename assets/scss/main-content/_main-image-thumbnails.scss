@@ -1,0 +1,47 @@
+@import "../variables/variables";
+
+
+.main-image-div {
+  width: 100%;
+  @include media-breakpoint-up(md) {
+    width: 85%;
+  }
+  .main-image {
+    object-fit: cover;
+    height: 16em;
+    @include media-breakpoint-up(sm) {
+      height: 21em;
+    }
+    @include media-breakpoint-up(md) {
+      border-radius: 15px;
+      height: auto;
+    }
+  }
+}
+
+.thumbnail-row {
+  @include media-breakpoint-up(lg) {
+    margin-left: 2em;
+    margin-right: 0.2em;
+    margin-top: 10em;
+  }
+}
+
+.thumbnail-shoe-div {
+  width: 15%;
+  border-radius: 13px;
+  border: 2px solid transparent;
+  @include media-breakpoint-up(md) {
+    width: 20%;
+  }
+  @include media-breakpoint-up(lg) {
+    width: 19%;
+  }
+  .thumbnail-shoe {
+    width: 100%;
+    border-radius: 10px;
+    &:hover, &:focus, &:active {
+      opacity: 0.3;
+    }
+  }
+}
