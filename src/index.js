@@ -298,3 +298,5 @@ myModal.addEventListener('hidden.bs.modal', function () {
     modal.removeAttribute("style");
   }
 })
+
+

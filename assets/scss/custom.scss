@@ -1,120 +1,29 @@
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
-@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-$grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1400px
-);
+@import "variables/variables";
+@import "header/header";
 
 
-// to debug 
+
+
+
 // * {
 //   outline: 1px solid red;
 // }
-//
+
+
 
 // TODO - see bootstrap break points specifically 
-$shopping-mobile: 400px; 
-$shopping-desktop: 900px;
-$orange: hsl(26, 100%, 55%);
-$pale-orange: hsl(25, 100%, 94%);
-$dark-blue: hsl(220, 13%, 13%);
-$dark-gray-blue: hsl(219, 9%, 45%);
-$gray-blue: hsl(220, 14%, 75%);
-$light-gray-blue: hsl(223, 64%, 98%);
-$white: hsl(0, 0%, 100%);
-$black: hsl(0, 0%, 0%);  //(with 75% opacity for lightbox background)
-$shopping-font: 'Kumbh Sans', sans-serif;
 
 
 // TODO - breakpoint "UP" see bootstrap media queries 
-.shopping-nav {
-  margin-right: 9em;
-  margin-left: 9em;
-  border-bottom: 2px solid $light-gray-blue;
-  @media only screen and (max-width: $shopping-desktop) {
-    margin-right: 0;
-    margin-left: 0;
-  }
-  .shopping-nav-toggle {
-    border: none;
-  }
-  .shopping-logo {
-    @media only screen and (max-width: $shopping-desktop) {
-      padding-bottom: 0.4em;
-    }
-  }
-}
 
-.header-link {
-  font-family: $shopping-font;
-  font-weight: 500;
-  color: $dark-gray-blue;
-  margin-right: 2em;
-  border-bottom: 3px solid transparent;
-  &:hover, &:focus, &:active {
-    border-bottom: 3px solid $orange;
-    color: $black;
-  }
-}
 
-.avatar-holder {
-  position: relative;
-  width: 40%;
-  &::after {
-    content: '';
-    position: absolute;
-    border-radius: 50px;
-    width: 3.2em;
-    height: 3.2em;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    box-shadow: inset 0 0 0 0 #ff7d1a; 
-  }
-  &:hover::after {
-    box-shadow: inset 0 0 0 2px #ff7d1a; 
-  } 
-  @media only screen and (max-width: $shopping-desktop) {
-    width: 18%;
-  }
-  .avatar {
-    object-fit: cover;
-    width: 100%;
-  }
-}
+// @include media-breakpoint-up(sm) { ... }
+// @include media-breakpoint-up(md) { ... }
+// @include media-breakpoint-up(lg) { ... }
+// @include media-breakpoint-up(xl) { ... }
+// @include media-breakpoint-up(xxl) { ... }
 
-.cart {
-  position: relative;
-  top: 0.5em;
-  @media only screen and (max-width: $shopping-desktop) {
-    top: 1.1em;
-    right: -3.2em;
-  }
-  .cart-amount-holder {
-    display: none;
-    position: absolute;
-    top: -0.2em;
-    left: 0.5em;
-    z-index: 2;
-    width: 2em;
-    height: 1.3em;
-    color: $white;
-    font-weight: 600;
-    font-size: 0.75em;
-    font-family: $shopping-font;
-    background-color: $orange;
-    border-radius: 45%;
-  }
-  .svg-cart:hover{
-    fill: #000000;
-  }
-}
+
 
 .offcanvas.shopping {
   width: 66%;

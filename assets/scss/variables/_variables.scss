@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 370px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1400px,
+  xxl: 1900px
+);
+$container-max-widths: (
+  sm: 365px,
+  md: 763px,
+  lg: 1020px,
+  xl: 1395px,
+  xxl: 1895px
+);
+
+$shopping-desktop: 900px; 
+$shopping-mobile: 400px;
+$orange: hsl(26, 100%, 55%);
+$pale-orange: hsl(25, 100%, 94%);
+$dark-blue: hsl(220, 13%, 13%);
+$dark-gray-blue: hsl(219, 9%, 45%);
+$gray-blue: hsl(220, 14%, 75%);
+$light-gray-blue: hsl(223, 64%, 98%);
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);  //(with 75% opacity for lightbox background)
+$shopping-font: 'Kumbh Sans', sans-serif;
+
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";

@@ -1,0 +1,111 @@
+@import "../variables/variables";
+
+.shopping-nav {
+  margin-right: 0;
+  margin-left: 0;
+  @include media-breakpoint-up(md) {
+    border-bottom: 2px solid $light-gray-blue;
+  }
+  .shopping-nav-toggle {
+    border: none;
+  }
+  .shopping-logo {
+    width: 95%;
+    @include media-breakpoint-up(md) {
+      width: 100%;
+    }
+    @include media-breakpoint-up(xxl) {
+      width: 250px; 
+      height: 75px;
+    }
+  }
+}
+
+.cart-amount-holder {
+  display: none;
+  position: absolute;
+  top: -0.2em;
+  left: 0.5em;
+  z-index: 2;
+  width: 2em;
+  height: 1.3em;
+  color: $white;
+  font-weight: 600;
+  font-size: 0.75em;
+  font-family: $shopping-font;
+  background-color: $orange;
+  border-radius: 45%;
+}
+.svg-cart:hover{
+  fill: #000000;
+}
+
+.cart-svg {
+@include media-breakpoint-up(xxl) {
+  width: 40px; 
+  height: 46px;
+}
+}
+
+.header-link {
+font-family: $shopping-font;
+font-weight: 500;
+color: $dark-gray-blue;
+margin-right: 2em;
+border-bottom: 3px solid transparent;
+&:hover, &:focus, &:active {
+  border-bottom: 3px solid $orange;
+  color: $black;
+}
+@include media-breakpoint-up(xxl) {
+  font-size: 1.5em;
+}
+}
+
+.avatar-holder {
+position: relative;
+width: 1.4em;
+@include media-breakpoint-up(md) {
+  width: 2em;
+}
+@include media-breakpoint-up(lg) {
+  width: 2.8em;
+}
+@include media-breakpoint-up(xxl) {
+  width: 4.5em;
+}
+&::after {
+  content: '';
+  position: absolute;
+  border-radius: 50px;
+  width: 4.5em;
+  height: 4.5em;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: inset 0 0 0 0 $orange; 
+  @include media-breakpoint-up(lg) {
+    width: 2.8em;
+    height: 2.8em;
+  }
+  @include media-breakpoint-up(xxl) {
+    width: 4.5em;
+    height: 4.5em;
+  }
+}
+&:hover::after {
+  box-shadow: inset 0 0 0 2px $orange; 
+}
+.avatar {
+  object-fit: cover;
+}
+}
+
+
+
+  
+
+
+
+
