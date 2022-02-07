@@ -15629,6 +15629,9 @@ textarea.form-control-lg {
   @media (min-width: 768px) {
     .shopping-nav {
       border-bottom: 1px solid #e6e7e7; } }
+  @media only screen and (min-width: 2500px) {
+    .shopping-nav {
+      margin-bottom: 5em; } }
   .shopping-nav .shopping-nav-toggle {
     border: none; }
   @media (min-width: 768px) {
@@ -23525,6 +23528,15 @@ textarea.form-control-lg {
   @media (min-width: 768px) {
     .main-image-div {
       width: 85%; } }
+  @media only screen and (min-width: 1200px) {
+    .main-image-div {
+      margin-bottom: 0.7em; } }
+  @media (min-width: 1900px) {
+    .main-image-div {
+      margin-bottom: 1.6em; } }
+  @media only screen and (min-width: 2500px) {
+    .main-image-div {
+      margin-bottom: 1.5em; } }
   .main-image-div .main-image {
     object-fit: cover;
     height: 16em; }
@@ -23535,6 +23547,9 @@ textarea.form-control-lg {
       .main-image-div .main-image {
         border-radius: 15px;
         height: auto; } }
+    @media only screen and (min-width: 2500px) {
+      .main-image-div .main-image {
+        border-radius: 20px; } }
 
 @media (min-width: 1024px) {
   .thumbnail-row {
@@ -23543,9 +23558,23 @@ textarea.form-control-lg {
 
 @media only screen and (min-width: 1200px) {
   .thumbnail-row {
-    margin-left: 2.5em;
-    margin-right: 1.3em;
-    margin-top: 1.8em !important; } }
+    margin-left: 2.3em;
+    margin-right: 0.8em; } }
+
+@media (min-width: 1400px) {
+  .thumbnail-row {
+    margin-left: 7em;
+    margin-right: 1.4em; } }
+
+@media (min-width: 1900px) {
+  .thumbnail-row {
+    margin-left: 9.3em;
+    margin-right: 3.1em; } }
+
+@media only screen and (min-width: 2500px) {
+  .thumbnail-row {
+    margin-left: 12.7em;
+    margin-right: 5.7em; } }
 
 .thumbnail-shoe-div {
   width: 15%;
@@ -23557,9 +23586,15 @@ textarea.form-control-lg {
   @media (min-width: 1024px) {
     .thumbnail-shoe-div {
       width: 19%; } }
+  @media (min-width: 1900px) {
+    .thumbnail-shoe-div {
+      border-radius: 15px; } }
   .thumbnail-shoe-div .thumbnail-shoe {
     width: 100%;
     border-radius: 10px; }
+    @media (min-width: 1900px) {
+      .thumbnail-shoe-div .thumbnail-shoe {
+        border-radius: 15px; } }
     .thumbnail-shoe-div .thumbnail-shoe:hover, .thumbnail-shoe-div .thumbnail-shoe:focus, .thumbnail-shoe-div .thumbnail-shoe:active {
       opacity: 0.3; }
 

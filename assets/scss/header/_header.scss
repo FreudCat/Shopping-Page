@@ -6,6 +6,9 @@
   @include media-breakpoint-up(md) {
     border-bottom: 1px solid rgb(230, 231, 231);
   }
+  @media only screen and (min-width: 2500px)  { 
+    margin-bottom: 5em;
+  }
   .shopping-nav-toggle {
     border: none;
   }
