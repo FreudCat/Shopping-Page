@@ -23539,8 +23539,13 @@ textarea.form-control-lg {
 @media (min-width: 1024px) {
   .thumbnail-row {
     margin-left: 2em;
-    margin-right: 0.2em;
-    margin-top: 10em; } }
+    margin-right: 0.2em; } }
+
+@media only screen and (min-width: 1200px) {
+  .thumbnail-row {
+    margin-left: 2.5em;
+    margin-right: 1.3em;
+    margin-top: 1.8em !important; } }
 
 .thumbnail-shoe-div {
   width: 15%;
