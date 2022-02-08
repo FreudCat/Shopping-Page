@@ -1,11 +1,9 @@
 @import "variables/variables";
 @import "header/header";
+@import "header/header-menus";
 @import "main-content/main-image-thumbnails";
 @import "main-content/item-description";
 @import "main-content/price-add";
-
-
-
 
 
 // * {
@@ -13,27 +11,12 @@
 // }
 
 
-
-// TODO - see bootstrap break points specifically 
-
-
-// TODO - breakpoint "UP" see bootstrap media queries 
-
-
-// @include media-breakpoint-up(sm) { ... }
-// @include media-breakpoint-up(md) { ... }
-// @include media-breakpoint-up(lg) { ... }
-// @include media-breakpoint-up(xl) { ... }
-// @include media-breakpoint-up(xxl) { ... }
-
-
-
 .offcanvas.shopping {
   width: 66%;
   box-shadow: 8px 10px 10px rgba(0, 0, 0, 0.2); 
   .offcanvas-link {
     font-family: $shopping-font;
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: 800;
     margin-bottom: 0.5em;
     color: $black;
@@ -42,73 +25,6 @@
 .offcanvas-backdrop.show, .modal-backdrop.show {
   opacity: 0.7;
 }
-
-.dropdown-menu {
-  border-radius: 10px;
-  box-shadow: 0 15px 55px -25px $dark-gray-blue;
-  border: none;
-  width: 23em;
-  transform: translate(-45%, 8%);
-  @media only screen and (max-width: $shopping-mobile) {
-    width: 22em;
-    transform: translate(-63%, 3%);
-  }
-  .modal-cart-header {
-    border: red;
-  }
-  .cart-title {
-    font-family: $shopping-font;
-    font-weight: 800;
-  }
-  .cart-image {
-    border-radius: 5px;
-  }
-  .checkout-button {
-    background-color: $orange;
-    border-radius: 10px;
-    font-family: $shopping-font;
-    text-align: center;
-    font-size: 1em;
-    font-weight: 600;
-    color: $white;
-  }
-  .cart-item-title {
-    font-size: 1em;
-    font-weight: 500;
-    font-family: $shopping-font;
-    color: hsl(214, 6%, 55%);
-    margin-bottom: 0;
-  }
-  .cart-item-price {
-    font-size: 1em;
-    font-weight: 500;
-    font-family: $shopping-font;
-    color: hsl(214, 6%, 55%);
-    margin-top: 0;
-    .cart-item-total {
-      font-weight: 700;
-      color: $black;
-    }
-  }
-  .empty-text {
-    font-size: 1em;
-    font-weight: 700;
-    font-family: $shopping-font;
-    color: $dark-gray-blue;
-  }
-}
-
-.delete-button:hover  {
-  .delete-path {
-    fill: $orange;
-  }
-}
-
-.multiply-amount::after {
-  content: "\00a0";
-}
-
-
 
 .main-image-button {
   padding: 0;
@@ -261,3 +177,5 @@
 .next-svg {
   margin-left: 0.8em;
 }
+
+

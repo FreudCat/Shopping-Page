@@ -1,4 +1,3 @@
-@import "../variables/variables";
 
 .shopping-nav {
   margin-right: 0;
@@ -23,11 +22,14 @@
   }
 }
 
+.cart {
 .cart-amount-holder {
+  justify-content: center;
+  align-items: center;
   display: none;
   position: absolute;
-  top: -0.2em;
-  left: 0.5em;
+  top: 1.1em;
+  right: 4.1em;
   z-index: 2;
   width: 2em;
   height: 1.3em;
@@ -37,9 +39,29 @@
   font-family: $shopping-font;
   background-color: $orange;
   border-radius: 45%;
+  @include media-breakpoint-up(md) {
+    top: 3em;
+    right: 6.7em;
+  }
+  @include media-breakpoint-up(lg) {
+    top: 3.2em;
+    right: 4em;
+  }
+  @include media-breakpoint-up(xl) {
+    top: 3.2em;
+    right: 8em;
+  }
+  @include media-breakpoint-up(xl) {
+    top: 3.3em;
+    right: 7em;
+    width: 3em;
+    height: 2em;
+    font-size: 1em;
+  }
 }
 .svg-cart:hover{
   fill: #000000;
+}
 }
 
 .cart-svg {

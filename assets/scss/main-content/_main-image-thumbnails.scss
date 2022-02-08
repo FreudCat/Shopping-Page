@@ -1,11 +1,10 @@
-@import "../variables/variables";
 
 
 .main-image {
   object-fit: cover;
   height: 16em;
   @include media-breakpoint-up(sm) {
-    height: 21em;
+    height: 19em;
   }
   @include media-breakpoint-up(md) {
     border-radius: 15px;
@@ -44,5 +43,3 @@
     opacity: 0.3;
   }
 }
-
-@import "../../../node_modules/bootstrap/scss/bootstrap.scss";

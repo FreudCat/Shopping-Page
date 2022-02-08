@@ -1,12 +1,12 @@
-@import "../variables/variables";
-
-
 .current-price {
   font-family: $shopping-font;
   color: $black;
-  font-size: 1.6em;
+  font-size: 1.4em;
   font-weight: 700;
   margin-bottom: 0.2em;
+  @media only screen and (min-width: 350px) {
+    font-size: 1.6em;
+  }
   @include media-breakpoint-up(xl) {
     font-size: 2.5em;
   }

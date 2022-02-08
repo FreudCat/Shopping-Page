@@ -1,0 +1,143 @@
+
+
+
+.container.dropdown-menu {
+  width: 95%;
+  border-radius: 10px;
+  box-shadow: 0 15px 55px -25px $dark-gray-blue;
+  border: none;
+  transform: translate(2.5%, 2.5%);
+  @include media-breakpoint-up(sm) {
+    transform: translate(2.5%, 2.5%);
+    @media only screen and (min-width: 425px) {
+      transform: translate(8%, 2.5%);
+  }
+  @include media-breakpoint-up(md) {
+    width: 45%;
+    transform: translate(135%, 5%);
+  }
+  @include media-breakpoint-up(lg) {
+    width: 40%;
+    transform: translate(160%, 5%);
+  }
+  @media only screen and (min-width: 2500px) {
+    width: 35%;
+    transform: translate(195%, 5%);
+  }
+
+}
+  // @include media-breakpoint-up(sm) {
+  //   
+  // }
+  // @media only screen and (max-width: $shopping-mobile) {
+  //   width: 22em;
+  //   transform: translate(-63%, 3%);
+  // }
+  .modal-cart-header {
+    border: red;
+  }
+  .cart-title {
+    font-family: $shopping-font;
+    font-weight: 800;
+    @include media-breakpoint-up(xl) {
+      font-size: 1.7em;
+    }
+    @media only screen and (min-width: 2500px) {
+      font-size: 2.3em;
+      margin-bottom: 1em;
+    }
+  }
+  .cart-image {
+    border-radius: 5px;
+  }
+  .checkout-button {
+    background-color: $orange;
+    border-radius: 10px;
+    font-family: $shopping-font;
+    text-align: center;
+    font-size: 1em;
+    font-weight: 600;
+    color: $white;
+    @include media-breakpoint-up(xl) {
+      font-size: 1.5em;
+    }
+    @media only screen and (min-width: 2500px) {
+      font-size: 2.3em;
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
+  }
+  .cart-item-title {
+    font-size: 0.8em;
+    font-weight: 500;
+    font-family: $shopping-font;
+    color: hsl(214, 6%, 55%);
+    margin-bottom: 0;
+    @include media-breakpoint-up(lg) {
+      font-size: 1em;
+    }
+    @include media-breakpoint-up(xl) {
+      font-size: 1.3em;
+    }
+    @media only screen and (min-width: 2500px) {
+      font-size: 2.2em;
+    }
+  }
+  .cart-item-price {
+    font-size: 0.9em;
+    font-weight: 500;
+    font-family: $shopping-font;
+    color: hsl(214, 6%, 55%);
+    margin-top: 0;
+    @include media-breakpoint-up(lg) {
+      font-size: 1.1em;
+    }
+    @include media-breakpoint-up(xl) {
+      font-size: 1.4em;
+    }
+    @media only screen and (min-width: 2500px) {
+      font-size: 2.2em;
+    }
+    .cart-item-total {
+      font-weight: 700;
+      color: $black;
+    }
+  }
+  .empty-text {
+    font-size: 1em;
+    font-weight: 700;
+    font-family: $shopping-font;
+    color: $dark-gray-blue;
+    @include media-breakpoint-up(xl) {
+      font-size: 1.5em;
+    }
+    @media only screen and (min-width: 2500px) {
+      font-size: 2.3em;
+      margin-top: 3em;
+      margin-bottom: 3em;
+    }
+  }
+}
+
+.trashcan {
+  @include media-breakpoint-up(xl) {
+    width: 35px; 
+    height: auto;
+  }
+  @media only screen and (min-width: 2500px) {
+    width: 50px; 
+    height: auto;
+  }
+
+}
+.delete-button:hover  {
+  .delete-path {
+    fill: $orange;
+  }
+}
+
+.multiply-amount::after {
+  content: "\00a0 \00a0";
+}
+
+
