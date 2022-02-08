@@ -8270,6 +8270,12 @@ textarea.form-control-lg {
 .less-opaque {
   opacity: 0.3; }
 
+.display-none {
+  display: none; }
+
+.display-flex {
+  display: flex; }
+
 .offcanvas.shopping {
   width: 66%;
   box-shadow: 8px 10px 10px rgba(0, 0, 0, 0.2); }

@@ -34,7 +34,7 @@ const imageArray = [
     alt: "Side view of left tan and white sneaker with 1/2 inch heal"
   }
 ] 
-
+// Elements that populate on load -> next time, place in lifecycle 
 const currentPrice = parseInt(document.querySelector(".set-price").getAttribute("data-price"));
 const sale = document.querySelector(".sale-tag").getAttribute("data-sale");
 const previousPrice = document.querySelector(".previous-price").getAttribute("data-previous-price"); 
@@ -42,22 +42,25 @@ document.querySelector(".set-price").innerHTML = currentPrice.toFixed(2);
 document.querySelector(".sale-tag").innerHTML = sale;
 document.querySelector(".previous-price").innerHTML = previousPrice;
 addCartButton.removeAttribute("data-bs-toggle");
+mainThumbnailArray[0].classList.add("less-opaque");
+mainThumbnailArray[0].parentElement.classList.add("add-orange-outline");
 
 if (localStorage.length === 0 || (localStorage.getItem("stored-amount") == 0)) {
-  checkoutRow.style.display = "none";
-  emptyCartModal.style.display = "flex";
-  hasItemsCartModal.style.display = "none";
+  checkoutRow.classList.add("display-none");
+  emptyCartModal.classList.add("display-flex");
+  hasItemsCartModal.classList.add("display-none");
   tempValue = 0; 
 } else {  
   tempValue = parseInt(localStorage.getItem("stored-amount"));
-  cartAmountHolder.style.display="flex";
+  cartAmountHolder.classList.add("display-flex");
   cartAmountHolder.innerHTML = tempValue;
-  checkoutRow.style.display = "flex";
-  emptyCartModal.style.display = "none";
-  hasItemsCartModal.style.display = "flex";
+  checkoutRow.classList.add("display-flex");
+  emptyCartModal.classList.add("display-none");
+  hasItemsCartModal.classList.add("display-flex");
   multiplier.innerHTML= tempValue;
   cartTotal.innerHTML = `$${(tempValue * currentPrice).toFixed(2)}`;
 }
+// End on load events
 
 let addToCartDisplay = document.querySelector(".number-holder");
 let addToCartValue = parseInt(addToCartDisplay.innerHTML);
@@ -82,7 +85,6 @@ addCartButton.addEventListener("click", function() {
 })
 
 function updateNumber(value) {
-  console.log(value);
   if (value < 0) {
     console.log("User clicked (-) button when value is already 0");
     addToCartValue=0;  
@@ -98,21 +100,21 @@ function updateCart(changeAmount) {
   let newAmount = parseInt(cartAmountHolder.innerHTML) + changeAmount;
   if (newAmount > 0) {
     localStorage.setItem("stored-amount", newAmount); 
-    cartAmountHolder.style.display="flex";
-    emptyCartModal.style.display = "none";
-    checkoutRow.style.display = "flex";
-    hasItemsCartModal.style.display = "flex";
+    cartAmountHolder.classList.add("display-flex");
+    emptyCartModal.classList.add("display-none");
+    checkoutRow.classList.add("display-flex");
+    hasItemsCartModal.classList.add("display-flex");
     cartAmountHolder.innerHTML = newAmount;
     multiplier.innerHTML= newAmount;
     cartTotal.innerHTML = `$${(newAmount * currentPrice).toFixed(2)}`;
     console.log("update cart val with new amount and bubble is visible");  
   } else {
     localStorage.setItem("stored-amount", 0);
-    checkoutRow.style.display = "none";
-    cartAmountHolder.style.display="none";
+    checkoutRow.classList.add("display-none");
+    cartAmountHolder.classList.add("display-none");
     cartAmountHolder.innerHTML = newAmount;
-    emptyCartModal.style.display = "flex";
-    hasItemsCartModal.style.display = "none";
+    emptyCartModal.classList.add("display-flex");
+    hasItemsCartModal.classList.add("display-none");
   }
 } 
 
@@ -145,18 +147,16 @@ function nextSlide(newIndex) {
     index = newIndex;
   }
   carousel.src = `../assets/images/${imageArray[index].title}.jpg`;
+  carousel.alt = imageArray[index].alt;
   thumbnailSrc = `../assets/images/${imageArray[index].title}-thumbnail.jpg`;
 
   for (let thumbnail of carouselArray) {
-    if (myModal.classList.contains("show")) {
       thumbnail.parentElement.classList.add("add-clear-outline");
       thumbnail.parentElement.classList.remove("add-orange-outline");
-    } 
-    thumbnail.classList.add("opaque");
-    thumbnail.removeAttribute("style");
+      thumbnail.classList.remove("less-opaque");
     if (thumbnail.getAttribute("src") === thumbnailSrc) {
+      thumbnail.parentElement.classList.remove("add-clear-outline");
       thumbnail.parentElement.classList.add("add-orange-outline");
-      thumbnail.classList.remove("opaque");
       thumbnail.classList.add("less-opaque");
     }
   }
@@ -171,48 +171,44 @@ for (let thumbnail of mainThumbnailArray) {
 function highlightShoe(clickedThumbnail) {
   let highlightedShoe = myModal.classList.contains("show") ? modalMain : mainShoe;
   let targetArray = myModal.classList.contains("show") ? modalThumbnailArray : mainThumbnailArray;
-
   highlightedShoe.src = `${(clickedThumbnail.getAttribute("src")).substring(0, 32)}.jpg`;
+  imageArray.forEach(image => {
+    if (image.title === (clickedThumbnail.getAttribute("src")).substring(17, 32)) {
+      highlightedShoe.alt = image.alt;
+    }
+  })
 
   for (let thumbnail of targetArray) {
-    if (myModal.classList.contains("show")) {
-      thumbnail.parentElement.classList.remove("less-opaque");
-    } else {
-      thumbnail.parentElement.style.outline="2px solid transparent";
-    }
-    thumbnail.style.opacity="1";
-    thumbnail.removeAttribute("style");
+    thumbnail.classList.remove("less-opaque");
+    thumbnail.parentElement.classList.remove("add-orange-outline");
+    thumbnail.parentElement.classList.add("add-clear-outline");
   }
-  let truncatedTitle = "";
   imageArray.forEach(image => {
-    if (clickedThumbnail.getAttribute("src") === image.src) {
-      truncatedTitle = (image.title).substring(0, 15);
-      console.log(clickedThumbnail.parentElement);
-      clickedThumbnail.parentElement.style.outline="2px solid hsl(26, 100%, 55%)";
-      clickedThumbnail.style.opacity="0.3";
+    if (image.title === (clickedThumbnail.getAttribute("src")).substring(17, 32)) {
+      clickedThumbnail.parentElement.classList.remove("add-clear-outline");
+      console.log("added");
+      clickedThumbnail.parentElement.classList.add("add-orange-outline");
+      clickedThumbnail.classList.add("less-opaque");
     } 
   })
 }
 
 // TO DO 
 // - review and delete - can we do it better? 
-if(window.innerWidth < 700) {
+if(window.innerWidth < 768) {
   document.querySelector(".main-image").removeAttribute("data-bs-toggle");
 }
 window.addEventListener("resize", function () {
-  if (window.innerWidth > 700) {
-    document.querySelector(".main-image").setAttribute("data-bs-toggle", "modal");
-  } else {
-    document.querySelector(".main-image").removeAttribute("data-bs-toggle");
-  }
+  window.innerWidth >= 768 ? document.querySelector(".main-image").setAttribute("data-bs-toggle", "modal") : document.querySelector(".main-image").removeAttribute("data-bs-toggle");
 });
 
 mainShoe.addEventListener("click", function() {
+console.log(getComputedStyle(document.body).getPropertyValue("display-none"));
   shoeInModal(mainShoe);
 })
 
 function shoeInModal(clickedShoe) {
-  modalMain.src = clickedShoe.getAttribute("src") 
+  modalMain.src = clickedShoe.getAttribute("src"); 
   let newThumbnailSrc = `../assets/images/${(clickedShoe.getAttribute("src")).substring(17, 32)}-thumbnail.jpg`;
   for (let thumbnail of modalThumbnailArray) {
     if (thumbnail.getAttribute("src") === newThumbnailSrc) {
@@ -229,12 +225,10 @@ for (let modalThumbnail of modalThumbnailArray ) {
 }
 
 myModal.addEventListener('hidden.bs.modal', function () {
-  carouselItem.classList.remove("active");
+  // carouselItem.classList.remove("active");
   for (let modal of modalThumbnailArray) {
     modal.parentElement.removeAttribute("style");
     modal.style.opacity="1";
     modal.removeAttribute("style");
   }
 })
-
-

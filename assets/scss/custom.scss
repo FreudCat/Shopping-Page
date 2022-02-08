@@ -10,6 +10,7 @@
 //   outline: 1px solid red;
 // }
 
+// Dynamic styles used in index.js
 .add-orange-outline {
   outline: 2px solid $orange;
 }
@@ -23,6 +24,16 @@
 .less-opaque {
   opacity: 0.3;
 }
+
+.display-none {
+  display: none;
+}
+
+.display-flex {
+  display: flex;
+}
+
+// End dynamic styles 
 
 .offcanvas.shopping {
   width: 66%;
