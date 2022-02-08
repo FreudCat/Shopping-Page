@@ -57,7 +57,7 @@ const imageArray = [
 
 // Items populated on page load 
 // better to use Int than floats in JS since there's room for error, unless it's specific for the calcluations. If decimals are needed for display, add the decimals there. 
-const currentPrice = 125.00; 
+const currentPrice = parseInt(document.querySelector(".set-price").getAttribute("data-price"));
 document.querySelector(".set-price").innerHTML = currentPrice.toFixed(2);
 const sale = "50%";
 document.querySelector(".sale-tag").innerHTML = sale;
