@@ -10,6 +10,19 @@
 //   outline: 1px solid red;
 // }
 
+.add-orange-outline {
+  outline: 2px solid $orange;
+}
+.add-clear-outline {
+  outline: 2px solid transparent;
+}
+.opaque {
+  opacity: 1;
+}
+
+.less-opaque {
+  opacity: 0.3;
+}
 
 .offcanvas.shopping {
   width: 66%;

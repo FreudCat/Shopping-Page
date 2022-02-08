@@ -16,52 +16,30 @@ const multiplier = document.querySelector(".multiply-amount");
 const cartTotal = document.querySelector(".cart-item-total");
 const addCartButton = document.querySelector(".add-cart-button");
 
-// TODO 
-// - find way to reuse the shortened titles and - maybe not even src or even the array itself since the images are already labeled as 1 - 4.   
 const imageArray = [
   {
     title: "image-product-1",
-    src: "../assets/images/image-product-1.jpg"
+    alt: "A pair of tan and white sneakers with white shoelaces and flat tread"
   }, 
   {
     title: "image-product-2",
-    src: "../assets/images/image-product-2.jpg"
+    alt: "A pair of tan and white sneakers with white shoelaces and orange back"
   }, 
   {
     title: "image-product-3",
-    src: "../assets/images/image-product-3.jpg"
+    alt: "A right tan and white sneaker balancing on two rocks with orange background"
   }, 
   {
     title: "image-product-4",
-    src: "../assets/images/image-product-4.jpg"
-  }, 
-  {
-    title: "image-product-1-thumbnail",
-    src: "../assets/images/image-product-1-thumbnail.jpg"
-  }, 
-  {
-    title: "image-product-2-thumbnail",
-    src: "../assets/images/image-product-2-thumbnail.jpg"
-  }, 
-  {
-    title: "image-product-3-thumbnail",
-    src: "../assets/images/image-product-3-thumbnail.jpg"
-  }, 
-  {
-    title: "image-product-4-thumbnail",
-    src: "../assets/images/image-product-4-thumbnail.jpg"
+    alt: "Side view of left tan and white sneaker with 1/2 inch heal"
   }
-];
+] 
 
-// localStorage.clear();
-
-// Items populated on page load 
-// better to use Int than floats in JS since there's room for error, unless it's specific for the calcluations. If decimals are needed for display, add the decimals there. 
 const currentPrice = parseInt(document.querySelector(".set-price").getAttribute("data-price"));
+const sale = document.querySelector(".sale-tag").getAttribute("data-sale");
+const previousPrice = document.querySelector(".previous-price").getAttribute("data-previous-price"); 
 document.querySelector(".set-price").innerHTML = currentPrice.toFixed(2);
-const sale = "50%";
 document.querySelector(".sale-tag").innerHTML = sale;
-const previousPrice = `$250.00`; 
 document.querySelector(".previous-price").innerHTML = previousPrice;
 addCartButton.removeAttribute("data-bs-toggle");
 
@@ -80,7 +58,6 @@ if (localStorage.length === 0 || (localStorage.getItem("stored-amount") == 0)) {
   multiplier.innerHTML= tempValue;
   cartTotal.innerHTML = `$${(tempValue * currentPrice).toFixed(2)}`;
 }
-
 
 let addToCartDisplay = document.querySelector(".number-holder");
 let addToCartValue = parseInt(addToCartDisplay.innerHTML);
@@ -142,68 +119,48 @@ function updateCart(changeAmount) {
 let index = "";
 for (let prevButton of carouselPrev) {
   prevButton.addEventListener("click", function() {
-    if (myModal.classList.contains("show")) {
-      currentSlideSrc=modalMain.getAttribute("src");
-    } else {
-      currentSlideSrc=mainShoe.getAttribute("src");
-    }
-    index = imageArray.findIndex( image => image.src === currentSlideSrc); 
+    currentSlideSrc = myModal.classList.contains("show") ? modalMain.getAttribute("src") : mainShoe.getAttribute("src");
+    index = imageArray.findIndex( image => image.title === currentSlideSrc.substring(17, 32)); 
     nextSlide(index-=1);
   })
 }
 
 for (let nextButton of carouselNext) {
   nextButton.addEventListener("click", function() {
-    if (myModal.classList.contains("show")) {
-      currentSlideSrc=modalMain.getAttribute("src");
-    } else {
-      currentSlideSrc=mainShoe.getAttribute("src");
-    }
-    index = imageArray.findIndex( image => image.src === currentSlideSrc); 
+    currentSlideSrc = myModal.classList.contains("show") ? modalMain.getAttribute("src") : mainShoe.getAttribute("src");
+    index = imageArray.findIndex( image => image.title === currentSlideSrc.substring(17, 32)); 
     nextSlide(index+=1);
   })
 }
 
-// use ternary operator for the if/else here 
 function nextSlide(newIndex) {
-  let carousel = "";
-  let carouselArray = "";
-  if (myModal.classList.contains("show")) {
-    carousel = modalMain;
-    carouselArray = modalThumbnailArray;
-  } else {
-    carousel = mainShoe;
-    carouselArray=mainThumbnailArray;
-  }
-  // rule - no "magic numbers" - ex. where did this "3" come from? 
+  let carousel = myModal.classList.contains("show") ? modalMain : mainShoe;
+  let carouselArray = myModal.classList.contains("show") ? modalThumbnailArray : mainThumbnailArray;
+
   if (newIndex < 0) {
-    index = 3; 
-  } else if (newIndex > 3) {
+    index = imageArray.length - 1; 
+  } else if (newIndex > imageArray.length - 1) {
     index = 0; 
   } else {
     index = newIndex;
   }
-  carousel.src = imageArray[index].src;
+  carousel.src = `../assets/images/${imageArray[index].title}.jpg`;
   thumbnailSrc = `../assets/images/${imageArray[index].title}-thumbnail.jpg`;
 
   for (let thumbnail of carouselArray) {
     if (myModal.classList.contains("show")) {
-      thumbnail.parentElement.removeAttribute("style");
-    } else {
-      thumbnail.parentElement.style.ouline="2px solid transparent";
-    }
-    thumbnail.style.opacity="1";
+      thumbnail.parentElement.classList.add("add-clear-outline");
+      thumbnail.parentElement.classList.remove("add-orange-outline");
+    } 
+    thumbnail.classList.add("opaque");
     thumbnail.removeAttribute("style");
     if (thumbnail.getAttribute("src") === thumbnailSrc) {
-      thumbnail.parentElement.style.outline = "2px solid hsl(26, 100%, 55%)";
-      thumbnail.style.opacity="0.3";
+      thumbnail.parentElement.classList.add("add-orange-outline");
+      thumbnail.classList.remove("opaque");
+      thumbnail.classList.add("less-opaque");
     }
   }
 }
-
-// TODO
-// - remove the .style.whatever and use classList and classes from the SCSS - separates them out so that you can change the scss and it will still work in the functionjs without having to rebuild the js. At that point if you just change the SCSS then it changes without the rebuild. 
-
 
 for (let thumbnail of mainThumbnailArray) {
   thumbnail.addEventListener("click", function() {
@@ -212,19 +169,14 @@ for (let thumbnail of mainThumbnailArray) {
 }
 
 function highlightShoe(clickedThumbnail) {
-  let highlightedShoe = "";
-  let targetArray = [];
-  if (myModal.classList.contains("show")) {
-    highlightedShoe = modalMain; 
-    targetArray = modalThumbnailArray;
-  } else {
-    targetArray = mainThumbnailArray;
-    highlightedShoe = mainShoe;
-  }
+  let highlightedShoe = myModal.classList.contains("show") ? modalMain : mainShoe;
+  let targetArray = myModal.classList.contains("show") ? modalThumbnailArray : mainThumbnailArray;
+
+  highlightedShoe.src = `${(clickedThumbnail.getAttribute("src")).substring(0, 32)}.jpg`;
 
   for (let thumbnail of targetArray) {
     if (myModal.classList.contains("show")) {
-      thumbnail.parentElement.removeAttribute("style");
+      thumbnail.parentElement.classList.remove("less-opaque");
     } else {
       thumbnail.parentElement.style.outline="2px solid transparent";
     }
@@ -239,11 +191,6 @@ function highlightShoe(clickedThumbnail) {
       clickedThumbnail.parentElement.style.outline="2px solid hsl(26, 100%, 55%)";
       clickedThumbnail.style.opacity="0.3";
     } 
-  })
-  imageArray.forEach(image => {
-    if (truncatedTitle === image.title) {
-      highlightedShoe.src = image.src;
-    }
   })
 }
 
@@ -260,26 +207,17 @@ window.addEventListener("resize", function () {
   }
 });
 
-
-
-
 mainShoe.addEventListener("click", function() {
   shoeInModal(mainShoe);
 })
 
 function shoeInModal(clickedShoe) {
-  let newThumbnailSrc = "";
-  imageArray.forEach(image => {
-    if (clickedShoe.getAttribute("src") === image.src) {
-      modalMain.parentElement.classList.add("active");
-      modalMain.src = image.src;
-      newThumbnailSrc = `../assets/images/${image.title}-thumbnail.jpg`;
-    }
-  })
+  modalMain.src = clickedShoe.getAttribute("src") 
+  let newThumbnailSrc = `../assets/images/${(clickedShoe.getAttribute("src")).substring(17, 32)}-thumbnail.jpg`;
   for (let thumbnail of modalThumbnailArray) {
     if (thumbnail.getAttribute("src") === newThumbnailSrc) {
-      thumbnail.parentElement.style.outline = "2px solid hsl(26, 100%, 55%)";
-      thumbnail.style.opacity="0.3";
+      thumbnail.parentElement.classList.add("add-orange-outline");
+      thumbnail.classList.add("less-opaque");
     }
   }
 } 

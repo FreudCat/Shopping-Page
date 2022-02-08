@@ -8258,6 +8258,18 @@ textarea.form-control-lg {
 .add-cart-div .add-cart-button {
   box-shadow: 0 30px 50px -20px #ff7d1a; }
 
+.add-orange-outline {
+  outline: 2px solid #ff7d1a; }
+
+.add-clear-outline {
+  outline: 2px solid transparent; }
+
+.opaque {
+  opacity: 1; }
+
+.less-opaque {
+  opacity: 0.3; }
+
 .offcanvas.shopping {
   width: 66%;
   box-shadow: 8px 10px 10px rgba(0, 0, 0, 0.2); }
