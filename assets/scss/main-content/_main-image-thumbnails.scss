@@ -1,80 +1,48 @@
 @import "../variables/variables";
 
 
-.main-image-div {
-  width: 100%;
+.main-image {
+  object-fit: cover;
+  height: 16em;
+  @include media-breakpoint-up(sm) {
+    height: 21em;
+  }
   @include media-breakpoint-up(md) {
-    width: 85%;
+    border-radius: 15px;
+    height: auto;
   }
-  @media only screen and (min-width: 1200px) {
-    margin-bottom: 0.7em;
-  }
-  @include media-breakpoint-up(xxl) {
-    margin-bottom: 1.6em;
-  }
-  @media only screen and (min-width: 2500px)  {
-    margin-bottom: 1.5em;
-  }
-  .main-image {
-    object-fit: cover;
-    height: 16em;
-    @include media-breakpoint-up(sm) {
-      height: 21em;
-    }
-    @include media-breakpoint-up(md) {
-      border-radius: 15px;
-      height: auto;
-    }
-    @media only screen and (min-width: 2500px)  { 
-      border-radius: 20px;
-    }
+  @include media-breakpoint-up(xl) {
+    margin-bottom: 0.2em;
   }
 }
 
 .thumbnail-row {
-  @include media-breakpoint-up(lg) {
-    margin-left: 2em;
-    margin-right: 0.2em;
-  }
-  @media only screen and (min-width: 1200px) {
-    margin-left: 2.3em;
-    margin-right: 0.8em;
-  }
-  @include media-breakpoint-up(xl) {
-    margin-left: 7em;
-    margin-right: 1.4em;
-  }
-  @include media-breakpoint-up(xxl) {
-    margin-left: 9.3em;
-    margin-right: 3.1em;
-  }
-  @media only screen and (min-width: 2500px)  { 
-    margin-left: 12.7em;
-    margin-right: 5.7em;
+  @media only screen and (min-width: 1900px) {
+    padding-right: 0;
   }
 }
 
 .thumbnail-shoe-div {
-  width: 15%;
-  border-radius: 13px;
-  border: 2px solid transparent;
   @include media-breakpoint-up(md) {
-    width: 20%;
-  }
-  @include media-breakpoint-up(lg) {
-    width: 19%;
+    border-radius: 13px;
+   // border: 2px solid transparent;
   }
   @include media-breakpoint-up(xxl) {
     border-radius: 15px;
   }
-  .thumbnail-shoe {
-    width: 100%;
-    border-radius: 10px;
-    @include media-breakpoint-up(xxl) {
-      border-radius: 15px;
-    }
-    &:hover, &:focus, &:active {
-      opacity: 0.3;
-    }
+}
+
+.thumbnail-shoe {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  @include media-breakpoint-up(xxl) {
+    border-radius: 15px;
+  }
+
+  &:hover, &:focus, &:active {
+    opacity: 0.3;
   }
 }
+
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";

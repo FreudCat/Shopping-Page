@@ -1,0 +1,90 @@
+@import "../variables/variables";
+
+
+// @include media-breakpoint-up(md) {
+//   width: 85%;
+// }
+// @media only screen and (min-width: 1200px) {
+//   margin-bottom: 0.7em;
+// }
+
+.information-row {
+  .title {
+    font-family: $shopping-font;
+    color: $orange;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    @include media-breakpoint-up(lg) {
+      font-size: 1em;
+    }
+    @media only screen and (min-width: 1200px) {
+      margin-top: 4.5em !important;
+    }
+    @include media-breakpoint-up(xl) {
+      font-size: 1.3em;
+    }
+    @include media-breakpoint-up(xxl) {
+      margin-top: 5.5em !important;
+      font-size: 1.5em;
+    }
+    @media only screen and (min-width: 2500px)  {
+      margin-top: 5em !important; 
+      font-size: 2.5em;
+    }
+  }
+  .shoe-name {
+    margin-top: 0.4em;
+    font-family: $shopping-font;
+    color: $black;
+    font-size: 1.8em;
+    font-weight: 800;
+    @include media-breakpoint-up(md) {
+      font-size: 1.6em;
+    }
+    @include media-breakpoint-up(lg) {
+      font-size: 2.3em;
+      @media only screen and (min-width: 1200px) {
+        margin-top: 0.5em;
+        font-size: 2.8em;
+      }
+    }
+    @include media-breakpoint-up(xl) {
+      font-size: 3.1em;
+    }
+    @include media-breakpoint-up(xxl) {
+      font-size: 3.5em;
+    }
+    @media only screen and (min-width: 2500px)  {
+      font-size: 5em;
+    }
+}
+  .description {
+    margin-top: 1em;
+    font-family: $shopping-font;
+    color: $dark-gray-blue;
+    font-size: 0.9em;
+    font-weight: 500;
+    line-height: 1.7em;
+    @include media-breakpoint-up(md) {
+      font-size: 0.8em;
+      line-height: 1.5em;
+    }
+    @include media-breakpoint-up(lg) {
+      font-size: 1.1em;
+    }
+    @include media-breakpoint-up(xl) {
+      font-size: 1.3em;
+    }
+    @include media-breakpoint-only(xxl) {
+      font-size: 1.8em;
+      @media only screen and (min-width: 2500px)  {
+        font-size: 2.5em;
+        margin-top: 1.5em !important;
+      }
+    }
+  }
+}
+
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";

@@ -190,12 +190,12 @@ function nextSlide(newIndex) {
     if (myModal.classList.contains("show")) {
       thumbnail.parentElement.removeAttribute("style");
     } else {
-      thumbnail.parentElement.style.border="2px solid transparent";
+      thumbnail.parentElement.style.ouline="2px solid transparent";
     }
     thumbnail.style.opacity="1";
     thumbnail.removeAttribute("style");
     if (thumbnail.getAttribute("src") === thumbnailSrc) {
-      thumbnail.parentElement.style.border = "2px solid hsl(26, 100%, 55%)";
+      thumbnail.parentElement.style.outline = "2px solid hsl(26, 100%, 55%)";
       thumbnail.style.opacity="0.3";
     }
   }
@@ -226,7 +226,7 @@ function highlightShoe(clickedThumbnail) {
     if (myModal.classList.contains("show")) {
       thumbnail.parentElement.removeAttribute("style");
     } else {
-      thumbnail.parentElement.style.border="2px solid transparent";
+      thumbnail.parentElement.style.outline="2px solid transparent";
     }
     thumbnail.style.opacity="1";
     thumbnail.removeAttribute("style");
@@ -236,7 +236,7 @@ function highlightShoe(clickedThumbnail) {
     if (clickedThumbnail.getAttribute("src") === image.src) {
       truncatedTitle = (image.title).substring(0, 15);
       console.log(clickedThumbnail.parentElement);
-      clickedThumbnail.parentElement.style.border="2px solid hsl(26, 100%, 55%)";
+      clickedThumbnail.parentElement.style.outline="2px solid hsl(26, 100%, 55%)";
       clickedThumbnail.style.opacity="0.3";
     } 
   })
@@ -278,7 +278,7 @@ function shoeInModal(clickedShoe) {
   })
   for (let thumbnail of modalThumbnailArray) {
     if (thumbnail.getAttribute("src") === newThumbnailSrc) {
-      thumbnail.parentElement.style.border = "2px solid hsl(26, 100%, 55%)";
+      thumbnail.parentElement.style.outline = "2px solid hsl(26, 100%, 55%)";
       thumbnail.style.opacity="0.3";
     }
   }

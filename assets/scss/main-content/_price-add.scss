@@ -1,0 +1,135 @@
+@import "../variables/variables";
+
+
+.current-price {
+  font-family: $shopping-font;
+  color: $black;
+  font-size: 1.6em;
+  font-weight: 700;
+  margin-bottom: 0.2em;
+  @include media-breakpoint-up(xl) {
+    font-size: 2.5em;
+  }
+}
+
+.sale-tag {
+  background-color: $pale-orange;
+  color: $orange;
+  font-family: $shopping-font;
+  font-size: 1em;
+  font-weight: 700;
+  border-radius: 5px;
+  margin-bottom: 0;
+  @include media-breakpoint-up(xl) {
+    font-size: 1.5em;
+  }
+}
+
+.previous-price {
+  font-family: $shopping-font;
+  color: $gray-blue;
+  font-size: 0.9em;
+  text-decoration: line-through;
+  font-weight: 700;
+  @include media-breakpoint-up(xl) {
+    font-size: 1.5em;
+  }
+}
+
+.minus {
+  background-color: $light-gray-blue;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  .minus-box {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+  .minus-sign {
+    @include media-breakpoint-up(xxl) {
+      width: 18px;
+      height: auto;
+    }
+  }
+  &:active {
+    .minus-sign {
+      opacity: 0.5;
+    }
+  }
+}
+
+.plus {
+  background-color: $light-gray-blue;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  .plus-box {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+  .plus-sign {
+    @include media-breakpoint-up(xxl) {
+      width: 18px;
+      height: auto;
+    }
+  }
+  &:active {
+    .plus-sign {
+      opacity: 0.5;
+    }
+  }
+}
+
+
+.amount {
+  background-color: $light-gray-blue;
+  .number-box {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    @include media-breakpoint-up(xl) {
+      padding-top: 0.1em;
+      padding-bottom: 0.2em;
+    }
+  }
+  .number-holder {
+    padding: 0; 
+    margin: 0;
+    font-family: $shopping-font;
+    font-weight: 800;
+    @include media-breakpoint-up(xl) {
+      font-size: 1.5em;
+    }
+  }  
+}
+
+.add-logo {
+  width: 45px;
+  height: auto;
+}
+
+.add-cart-button {
+  background-color: $orange;
+  font-family: $shopping-font;
+  font-weight: 600;
+  color: $white;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  border-radius: 10px;
+  @include media-breakpoint-up(xl) {
+    font-size: 1.8em;
+  }
+  &:hover {
+    color: $white;
+  }
+  &:active {
+    opacity: 0.5;
+    color: $white;
+  } 
+}
+
+.add-cart-div {
+  @media only screen and (max-width: $shopping-desktop) {
+  margin-bottom: 6em;
+  }
+.add-cart-button {
+  box-shadow: 0 30px 50px -20px $orange;
+}
+}

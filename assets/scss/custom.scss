@@ -1,6 +1,8 @@
 @import "variables/variables";
 @import "header/header";
 @import "main-content/main-image-thumbnails";
+@import "main-content/item-description";
+@import "main-content/price-add";
 
 
 
@@ -106,155 +108,7 @@
   content: "\00a0";
 }
 
-.information-row {
-  @media only screen and (min-width: $shopping-desktop) {
-  margin-top: 10em;
-  }
-  margin-top: 1.5em;
-  .title {
-    font-family: $shopping-font;
-    color: $orange;
-    text-transform: uppercase;
-    font-size: 0.9em;
-    font-weight: 800;
-    letter-spacing: 0.2em;
-  }
-  .shoe-name {
-    margin-top: 0.4em;
-    font-family: $shopping-font;
-    color: $black;
-    font-size: 2.5em;
-    font-weight: 700;
-    @media only screen and (max-width: $shopping-mobile) {
-      font-size: 1.8em;
-  }
-}
-  .description {
-    margin-top: 2.5em;
-    font-family: $shopping-font;
-    color: $dark-gray-blue;
-    font-size: 0.9em;
-    font-weight: 500;
-    line-height: 1.8em;
-    @media only screen and (max-width: $shopping-mobile) {
-      margin-top: 1em;
-  }
-  }
-}
 
-.current-price {
-  font-family: $shopping-font;
-  color: $black;
-  font-size: 1.6em;
-  font-weight: 700;
-  margin-bottom: 0.2em;
-}
-
-.sale-tag {
-  background-color: $pale-orange;
-  color: $orange;
-  font-family: $shopping-font;
-  font-size: 1em;
-  font-weight: 700;
-  border-radius: 5px;
-  margin-bottom: 0;
-}
-
-.previous-price {
-  font-family: $shopping-font;
-  color: $gray-blue;
-  font-size: 0.9em;
-  text-decoration: line-through;
-  font-weight: 700;
-}
-
-.minus {
-  background-color: $light-gray-blue;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  .minus-box {
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-  }
-  .minus-sign {
-    @media only screen and (min-width: $shopping-desktop) {
-    margin-bottom: 0.2em;
-    }
-  }
-  &:active {
-    .minus-sign {
-      opacity: 0.5;
-    }
-  }
-  .minus-sign {
-
-  }
-}
-
-.plus {
-  background-color: $light-gray-blue;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  .plus-box {
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-  }
-  .plus-sign {
-  @media only screen and (min-width: $shopping-desktop) {
-    margin-bottom: 0.2em;
-    }
-  }
-  &:active {
-    .plus-sign {
-      opacity: 0.5;
-    }
-  }
-  .plus-sign {
-
-  }
-}
-
-
-.amount {
-  width: 2.1em;
-  background-color: $light-gray-blue;
-  .number-box {
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-  }
-  .number-holder {
-    padding: 0; 
-    margin: 0;
-    font-family: $shopping-font;
-    font-weight: 800;
-  }  
-}
-
-.add-cart-button {
-  background-color: $orange;
-  font-family: $shopping-font;
-  font-weight: 600;
-  color: $white;
-  padding-top: 0.8em;
-  padding-bottom: 0.8em;
-  border-radius: 10px;
-  &:hover {
-    color: $white;
-  }
-  &:active {
-    opacity: 0.5;
-    color: $white;
-  } 
-}
-
-.add-cart-div {
-  @media only screen and (max-width: $shopping-desktop) {
-  margin-bottom: 6em;
-  }
-.add-cart-button {
-  box-shadow: 0 30px 50px -20px $orange;
-}
-}
 
 .main-image-button {
   padding: 0;

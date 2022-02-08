@@ -10,7 +10,7 @@
   
   <header>
     <div class="container-fluid px-0 shopping-nav-container px-xl-5">
-      <nav class="navbar navbar-expand-md navbar-light pt-1 pb-3 pt-md-3 pb-md-0 mx-md-5 px-xl-5 justify-content-md-start shopping-nav">
+      <nav class="navbar navbar-expand-md navbar-light pt-1 pb-3 pt-md-3 pb-md-0 mb-xxl-5 mx-md-5 px-xl-5 justify-content-md-start shopping-nav">
         <div class="d-inline-flex me-lg-auto">
           <button class="navbar-toggler shopping-nav-toggle ms-2 me-1 pt-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#shoppingSupportedContent" aria-controls="shoppingSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <img src="../assets/images/icon-menu.svg">
@@ -66,13 +66,13 @@
     <div class="container-fluid">
       <div class="row">
         <section class="col-md-6 left-col mt-md-5 mt-lg-0 g-0">
-          <div class="row main-image-row">
-            <div class="col-12 offset-lg-1 col-lg-11 offset-xl-2 col-xl-10 g-0">
-              <div class="main-image-div ms-md-5 mt-md-3 mt-lg-5 pt-xxl-5">
+          <div class="row main-image-row g-0">
+            <div class="col-12 mb-4 mb-md-0 offset-md-2 col-md-10 offset-xl-3 col-xl-9 g-0">
+              
                 <div id="mainCarousel" class="carousel slide carousel-fade" data-bs-interval="false" data-bs-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <img class="main-image mt-lg-3 w-100" data-bs-toggle="modal" data-bs-target="#shoeModal" src="../assets/images/image-product-1.jpg">
+                      <img class="main-image mt-lg-5 mb-lg-2 w-100" data-bs-toggle="modal" data-bs-target="#shoeModal" src="../assets/images/image-product-1.jpg">
                     </div>
                   </div>
                   <button class="carousel-control-prev d-md-none ms-3" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
@@ -84,54 +84,52 @@
                     <span class="visually-hidden">Next</span>
                   </button>
                 </div>
-              </div>
+              
             </div>
           </div>
-          <div class="row thumbnail-row d-none d-md-flex justify-content-between mt-md-2 mt-lg-3">
-            <div class="ms-md-5 g-0 col-2 thumbnail-shoe-div" style="border:2px solid hsl(26, 100%, 55%);"><img class="thumbnail-shoe" src="../assets/images/image-product-1-thumbnail.jpg" style="opacity:0.3;"></div>
+          <div class="row thumbnail-row d-none justify-content-between d-md-flex g-0 mt-3">
+            <div class="offset-2 offset-xl-3 col-2 thumbnail-shoe-div" style="outline:2px solid hsl(26, 100%, 55%);"><img class="thumbnail-shoe" src="../assets/images/image-product-1-thumbnail.jpg" style="opacity:0.3;"></div>
             <div class="col-2 g-0 thumbnail-shoe-div"><img class="thumbnail-shoe" src="../assets/images/image-product-2-thumbnail.jpg"></div>
             <div class="col-2 g-0 thumbnail-shoe-div"><img class="thumbnail-shoe" src="../assets/images/image-product-3-thumbnail.jpg"></div>
-            <div class="col-2 me-md-2 g-0 thumbnail-shoe-div"><img class="thumbnail-shoe" src="../assets/images/image-product-4-thumbnail.jpg"></div>
+            <div class="col-2 g-0 thumbnail-shoe-div"><img class="thumbnail-shoe" src="../assets/images/image-product-4-thumbnail.jpg"></div>
           </div>
         </section>
-        <section class="col-md-6 right-col">
-          <div class="row information-row ms-1 ms-md-0 ps-md-0">
-            <div class="col-12 offset-md-2 col-md-8">
-            <h1 class="title">Sneaker Company</h1>
-            <h2 class="shoe-name">Fall Limited Edition Sneakers</h2>
-            <p class="description mb-4">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+        <section class="col-md-6 px-4 ps-md-2 ps-lg-4 pe-md-5 pe-lg-1 right-col mt-lg-4 mt-xl-0">
+          <div class="row information-row ms-md-0 ps-md-0 g-0">
+            <div class="col-12 offset-md-1 col-md-11 g-0 pt-xl-5">
+            <h1 class="title pt-md-1 pt-lg-5 mt-md-5 pt-xl-0 mt-lg-4 mb-md-3">Sneaker Company</h1>
+            <h2 class="shoe-name   me-lg-5 pe-lg-5">Fall Limited Edition Sneakers</h2>
+            <p class="description mb-4 me-lg-5 mt-lg-4">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
           </div>
-          <div class="row d-flex align-items-center price-row mt-md-2">
-            <div class="col-4 col-md-2 offset-md-2 ps-md-3">
-              <!-- If something is used for JS, use ID so it is targeted, classes are more for styling, so use both IDs and class if needed so now we have separated out the CSS and the JS -->
+          <div class="row d-flex g-0 align-items-center price-row">
+            <div class="col-4 offset-md-1 col-lg-3 col-xxl-2">
               <p class="current-price">$<span class="set-price"></span></p>
             </div>
-            <div class="col-3 col-md-1 text-center mb-2 mt-md-1 ms-md-4 px-md-1 pb-md-2 mb-md-1 sale-percent">
-              <p class="sale-tag"></p>
+            <div class="col-2 px-lg-3 mb-1 text-center sale-percent">
+              <p class="ms-1 sale-tag"></p>
             </div>
-            <div class="col-3 col-md-10 justify-content-end mb-2 me-md-0 ms-auto offset-md-2 ps-md-3 previous-price">
-              <p class="previous-price"></p>
+            <div class="offset-3 offset-md-2 offset-lg-1 col-lg-11 d-flex justify-content-end justify-content-lg-start col-3">
+              <p class="mt-2 mt-md-3 mt-lg-0 mb-xxl-5 previous-price"></p>
             </div>
           </div>
 
-          <div class="row cart-add-row mt-2 d-flex align-items-center justify-content-center justify-content-md-start">
-            <div class="d-flex justify-content-start col-5 offset-md-2 col-md-1 minus py-2">
+          <div class="row cart-add-row g-0 mt-2 d-flex align-items-center">
+            <div class="d-flex justify-content-start offset-md-1 col-lg-2 col-5 col-xl-1 minus py-2 py-xl-3 py-xxl-4">
               <div class="minus-box">
-                <img class="minus-sign" src="../assets/images/icon-minus.svg">
+                <svg class="minus-sign mb-1 ms-4" viewBox="0 0 12 4" width="12" height="4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M11.357 3.332A.641.641 0 0 0 12 2.69V.643A.641.641 0 0 0 11.357 0H.643A.641.641 0 0 0 0 .643v2.046c0 .357.287.643.643.643h10.714Z" id="a"/></defs><use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#a"/></svg>
             </div>
             </div>
-            <div class="d-flex justify-content-center col-2 col-md-1 py-2 amount">
+            <div class="d-flex justify-content-center col-2 col-md-1 py-2 py-xl-3 py-xxl-4 amount">
               <div class="number-box">
               <p class="number-holder">0</p>
             </div>
             </div>
-            <div class="d-flex justify-content-end col-5 col-md-1 plus py-2">
-              <div class="plus-box">
-              <img class="plus-sign"src="../assets/images/icon-plus.svg">
+            <div class="d-flex justify-content-end col-5 plus py-2 py-xl-3 py-xxl-4 col-lg-2 col-xl-1">
+              <div class="plus-box"><svg class="plus-sign mb-1 me-4" viewBox="0 0 12 12" width="12" height="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M12 7.023V4.977a.641.641 0 0 0-.643-.643h-3.69V.643A.641.641 0 0 0 7.022 0H4.977a.641.641 0 0 0-.643.643v3.69H.643A.641.641 0 0 0 0 4.978v2.046c0 .356.287.643.643.643h3.69v3.691c0 .356.288.643.644.643h2.046a.641.641 0 0 0 .643-.643v-3.69h3.691A.641.641 0 0 0 12 7.022Z" id="b"/></defs><use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#b"/></svg>
             </div>
             </div>
-            <div class="col-md-6 add-cart-div text-center px-2 px-md-3 mt-3 mt-md-0">
-              <button type="button" class="btn add-cart-button w-100" data-bs-toggle="modal" data-bs-target="#thank-you-modal"><svg class="mb-md-1" width="35" height="20" xmlns="http://www.w3.org/2000/svg"><path class="svg-cart" d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="#ffffff" fill-rule="nonzero"/></svg>Add to cart</button>
+            <div class="col-12 offset-md-1 col-md-11 add-cart-div col-lg-5 offset-lg-0 col-xl-6 text-center mt-3 mt-lg-0 ms-lg-2">
+              <button type="button" class="btn py-xl-3 py-xxl-4 add-cart-button w-100" data-bs-toggle="modal" data-bs-target="#thank-you-modal"><svg class="add-logo mb-md-1" viewBox = "0 0 35 20" width="35" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="#ffffff" fill-rule="nonzero"/></svg>Add to cart</button>
             </div>
           </div>
           </div>
