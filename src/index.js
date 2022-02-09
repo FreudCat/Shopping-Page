@@ -52,7 +52,7 @@ if (localStorage.length === 0 || (localStorage.getItem("stored-amount") == 0)) {
   tempValue = 0; 
 } else {  
   tempValue = parseInt(localStorage.getItem("stored-amount"));
-  cartAmountHolder.classList.add("display-flex");
+  cartAmountHolder.classList.remove("display-none");
   cartAmountHolder.innerHTML = tempValue;
   checkoutRow.classList.add("display-flex");
   emptyCartModal.classList.add("display-none");
@@ -100,20 +100,24 @@ function updateCart(changeAmount) {
   let newAmount = parseInt(cartAmountHolder.innerHTML) + changeAmount;
   if (newAmount > 0) {
     localStorage.setItem("stored-amount", newAmount); 
-    cartAmountHolder.classList.add("display-flex");
+    cartAmountHolder.classList.remove("display-none");
+    emptyCartModal.classList.remove("display-flex");
     emptyCartModal.classList.add("display-none");
     checkoutRow.classList.add("display-flex");
     hasItemsCartModal.classList.add("display-flex");
     cartAmountHolder.innerHTML = newAmount;
     multiplier.innerHTML= newAmount;
     cartTotal.innerHTML = `$${(newAmount * currentPrice).toFixed(2)}`;
+    console.log(cartAmountHolder.classList);
+    console.log(cartAmountHolder.innerHTML);
     console.log("update cart val with new amount and bubble is visible");  
   } else {
     localStorage.setItem("stored-amount", 0);
+    checkoutRow.classList.remove("display-flex");
     checkoutRow.classList.add("display-none");
-    cartAmountHolder.classList.add("display-none");
-    cartAmountHolder.innerHTML = newAmount;
+    cartAmountHolder.classList.add("display-none");   cartAmountHolder.innerHTML = 0;
     emptyCartModal.classList.add("display-flex");
+    hasItemsCartModal.classList.remove("display-flex");
     hasItemsCartModal.classList.add("display-none");
   }
 } 

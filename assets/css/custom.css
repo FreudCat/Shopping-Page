@@ -7832,7 +7832,6 @@ textarea.form-control-lg {
 .cart .cart-amount-holder {
   justify-content: center;
   align-items: center;
-  display: none;
   position: absolute;
   top: 1.1em;
   right: 4.1em;
@@ -8050,6 +8049,10 @@ textarea.form-control-lg {
   @media (min-width: 1400px) {
     .main-image {
       margin-bottom: 0.2em; } }
+
+@media only screen and (min-width: 1200px) {
+  .thumbnail-row {
+    margin-bottom: 8em; } }
 
 @media only screen and (min-width: 1900px) {
   .thumbnail-row {
